@@ -32,7 +32,7 @@ If the styles aren't loading, you can manually add `@tweakfluxStyles` to your la
 
 | Command | Description |
 |---------|-------------|
-| `tweakflux:apply {theme}` | Generate the theme CSS file |
+| `tweakflux:apply {theme?}` | Apply a theme (interactive picker if no name given) |
 | `tweakflux:list` | List all available themes |
 | `tweakflux:create {name}` | Scaffold a new theme JSON file |
 

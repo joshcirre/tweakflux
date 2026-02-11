@@ -15,9 +15,6 @@ final class GenerateThemeCss
     {
         $lines = [];
 
-        // Font @import URLs first
-        $lines = array_merge($lines, $this->generateFontImports($theme));
-
         /** @var array<string, mixed> $light */
         $light = $theme['light'] ?? [];
         /** @var array<string, mixed> $dark */
@@ -64,30 +61,6 @@ final class GenerateThemeCss
         }
 
         return implode("\n", $lines);
-    }
-
-    /**
-     * @param  array<string, mixed>  $theme
-     * @return list<string>
-     */
-    private function generateFontImports(array $theme): array
-    {
-        $imports = [];
-
-        /** @var array<string, mixed> $fonts */
-        $fonts = $theme['fonts'] ?? [];
-        /** @var array<int, string> $urls */
-        $urls = $fonts['urls'] ?? [];
-
-        foreach ($urls as $url) {
-            $imports[] = sprintf('@import url("%s");', $url);
-        }
-
-        if ($imports !== []) {
-            $imports[] = '';
-        }
-
-        return $imports;
     }
 
     /**
