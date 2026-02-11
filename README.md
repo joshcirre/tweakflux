@@ -17,7 +17,15 @@ php artisan vendor:publish --tag=tweakflux-themes
 
 ## Quick Start
 
-Add `@tweakfluxStyles` to your layout's `<head>`:
+```bash
+php artisan tweakflux:apply bubblegum
+```
+
+That's it. The `apply` command generates the theme CSS and automatically adds the import to your `resources/css/app.css`. With Vite running, you'll see the changes instantly.
+
+### Troubleshooting
+
+If the styles aren't loading, you can manually add `@tweakfluxStyles` to your layout's `<head>` as a fallback:
 
 ```blade
 <head>
@@ -25,14 +33,6 @@ Add `@tweakfluxStyles` to your layout's `<head>`:
     @tweakfluxStyles
 </head>
 ```
-
-Apply a preset theme:
-
-```bash
-php artisan tweakflux:apply bubblegum
-```
-
-That's it. Refresh your browser.
 
 ## Available Commands
 
@@ -89,7 +89,8 @@ Published to `config/tweakflux.php`:
 return [
     'active_theme' => env('TWEAKFLUX_THEME', 'default'),
     'themes_path' => resource_path('themes'),
-    'output_path' => public_path('css/tweakflux-theme.css'),
+    'output_path' => resource_path('css/tweakflux-theme.css'),
+    'css_entry_point' => resource_path('css/app.css'),
 ];
 ```
 

@@ -16,6 +16,8 @@ final class TweakFluxApply extends Command
 
     protected $description = 'Generate the TweakFlux theme CSS file';
 
+    private const IMPORT_STATEMENT = '@import "./tweakflux-theme.css";';
+
     public function handle(GetTheme $getTheme, GenerateThemeCss $generateCss): int
     {
         /** @var string $themeName */
@@ -39,6 +41,28 @@ final class TweakFluxApply extends Command
 
         $this->info(sprintf('Theme "%s" applied to %s', $themeName, $outputPath));
 
+        $this->injectImport();
+
         return self::SUCCESS;
+    }
+
+    private function injectImport(): void
+    {
+        /** @var string $entryPoint */
+        $entryPoint = config('tweakflux.css_entry_point');
+
+        if (! File::exists($entryPoint)) {
+            return;
+        }
+
+        $contents = File::get($entryPoint);
+
+        if (str_contains($contents, self::IMPORT_STATEMENT)) {
+            return;
+        }
+
+        File::put($entryPoint, self::IMPORT_STATEMENT."\n".$contents);
+
+        $this->info('Added TweakFlux import to '.basename($entryPoint));
     }
 }
