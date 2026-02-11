@@ -17,16 +17,19 @@ php artisan vendor:publish --tag=tweakflux-themes
 
 ## Quick Start
 
+Add `@tweakfluxStyles` to your layout's `<head>`:
+
+```blade
+<head>
+    ...
+    @tweakfluxStyles
+</head>
+```
+
 Apply a preset theme:
 
 ```bash
 php artisan tweakflux:apply bubblegum
-```
-
-Then include the generated CSS in your layout:
-
-```html
-<link rel="stylesheet" href="{{ asset('css/tweakflux-theme.css') }}">
 ```
 
 That's it. Refresh your browser.
