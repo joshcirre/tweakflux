@@ -48,6 +48,7 @@ If the styles aren't loading, you can manually add `@tweakfluxStyles` to your la
 | **Coffee** | Warm brown and gold tones with a cozy coffeehouse feel |
 | **Dracula** | The iconic dark palette with vibrant pastels on deep purple-gray backgrounds |
 | **Forest** | Warm earthy greens with stone-tinted neutrals and muted shadows |
+| **Laravel** | Boxy cards, pure neutral grays, and the iconic red — modeled after laravel.com |
 | **Nord** | Arctic-inspired muted blue-gray palette with clean, minimal aesthetics |
 | **Ocean** | Cool blue-tinted slate palette with sky accents |
 | **Retro** | Warm vintage parchment tones with salmon and sage green accents |
