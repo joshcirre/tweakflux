@@ -1,0 +1,66 @@
+{
+    "name": "Claude",
+    "description": "Warm terra cotta and cream tones inspired by Anthropic's Claude",
+    "fonts": {
+        "sans": "Söhne, system-ui, sans-serif",
+        "mono": "Söhne Mono, monospace",
+        "serif": null,
+        "urls": []
+    },
+    "light": {
+        "accent": "oklch(0.58 0.14 45)",
+        "accent-content": "oklch(0.58 0.14 45)",
+        "accent-foreground": "oklch(0.98 0.005 60)",
+        "zinc": {
+            "50": "oklch(0.98 0.005 60)",
+            "100": "oklch(0.965 0.007 60)",
+            "200": "oklch(0.93 0.009 58)",
+            "300": "oklch(0.87 0.01 55)",
+            "400": "oklch(0.70 0.012 50)",
+            "500": "oklch(0.55 0.01 50)",
+            "600": "oklch(0.45 0.008 50)",
+            "700": "oklch(0.37 0.008 50)",
+            "800": "oklch(0.27 0.006 50)",
+            "900": "oklch(0.20 0.006 50)",
+            "950": "oklch(0.14 0.004 50)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.68 0.12 40)",
+        "accent-content": "oklch(0.68 0.12 40)",
+        "accent-foreground": "oklch(0.16 0.01 50)",
+        "zinc": {
+            "50": "oklch(0.98 0.005 60)",
+            "100": "oklch(0.965 0.007 60)",
+            "200": "oklch(0.93 0.009 58)",
+            "300": "oklch(0.87 0.01 55)",
+            "400": "oklch(0.70 0.012 50)",
+            "500": "oklch(0.55 0.01 50)",
+            "600": "oklch(0.45 0.008 50)",
+            "700": "oklch(0.37 0.008 50)",
+            "800": "oklch(0.27 0.008 50)",
+            "900": "oklch(0.20 0.008 50)",
+            "950": "oklch(0.14 0.006 50)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.25rem",
+        "md": "0.4rem",
+        "lg": "0.625rem",
+        "xl": "0.875rem",
+        "2xl": "1.125rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.45 0.03 50 / 0.06)",
+        "xs": "0 1px 3px oklch(0.45 0.03 50 / 0.08), 0 1px 2px oklch(0.45 0.03 50 / 0.05)",
+        "sm": "0 2px 6px oklch(0.45 0.03 50 / 0.08), 0 1px 3px oklch(0.45 0.03 50 / 0.06)",
+        "DEFAULT": "0 4px 10px oklch(0.45 0.03 50 / 0.08), 0 2px 4px oklch(0.45 0.03 50 / 0.06)",
+        "md": "0 6px 16px oklch(0.45 0.03 50 / 0.10), 0 2px 6px oklch(0.45 0.03 50 / 0.06)",
+        "lg": "0 12px 28px oklch(0.45 0.03 50 / 0.12), 0 4px 10px oklch(0.45 0.03 50 / 0.06)",
+        "xl": "0 20px 40px oklch(0.45 0.03 50 / 0.14)",
+        "2xl": "0 28px 56px oklch(0.45 0.03 50 / 0.18)"
+    },
+    "spacing": null
+}

@@ -1,0 +1,66 @@
+{
+    "name": "Coffee",
+    "description": "Warm brown and gold tones with a cozy coffeehouse feel",
+    "fonts": {
+        "sans": "Merriweather Sans, sans-serif",
+        "mono": "JetBrains Mono, monospace",
+        "serif": "Merriweather, serif",
+        "urls": ["https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.62 0.12 60)",
+        "accent-content": "oklch(0.62 0.12 60)",
+        "accent-foreground": "oklch(0.98 0.006 55)",
+        "zinc": {
+            "50": "oklch(0.98 0.006 55)",
+            "100": "oklch(0.96 0.01 55)",
+            "200": "oklch(0.925 0.014 55)",
+            "300": "oklch(0.87 0.016 55)",
+            "400": "oklch(0.70 0.018 55)",
+            "500": "oklch(0.55 0.016 55)",
+            "600": "oklch(0.45 0.014 55)",
+            "700": "oklch(0.37 0.012 55)",
+            "800": "oklch(0.27 0.01 55)",
+            "900": "oklch(0.20 0.008 55)",
+            "950": "oklch(0.14 0.007 55)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.72 0.11 60)",
+        "accent-content": "oklch(0.72 0.11 60)",
+        "accent-foreground": "oklch(0.16 0.02 55)",
+        "zinc": {
+            "50": "oklch(0.98 0.006 55)",
+            "100": "oklch(0.96 0.01 55)",
+            "200": "oklch(0.925 0.014 55)",
+            "300": "oklch(0.87 0.016 55)",
+            "400": "oklch(0.70 0.018 55)",
+            "500": "oklch(0.55 0.016 55)",
+            "600": "oklch(0.45 0.014 55)",
+            "700": "oklch(0.37 0.012 55)",
+            "800": "oklch(0.27 0.012 55)",
+            "900": "oklch(0.20 0.012 55)",
+            "950": "oklch(0.14 0.01 55)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.25rem",
+        "md": "0.4rem",
+        "lg": "0.625rem",
+        "xl": "0.875rem",
+        "2xl": "1.125rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.40 0.05 55 / 0.07)",
+        "xs": "0 1px 3px oklch(0.40 0.05 55 / 0.10), 0 1px 2px oklch(0.40 0.05 55 / 0.07)",
+        "sm": "0 2px 6px oklch(0.40 0.05 55 / 0.10), 0 1px 3px oklch(0.40 0.05 55 / 0.07)",
+        "DEFAULT": "0 4px 10px oklch(0.40 0.05 55 / 0.12), 0 2px 4px oklch(0.40 0.05 55 / 0.08)",
+        "md": "0 6px 16px oklch(0.40 0.05 55 / 0.14), 0 2px 6px oklch(0.40 0.05 55 / 0.08)",
+        "lg": "0 12px 28px oklch(0.40 0.05 55 / 0.16), 0 4px 10px oklch(0.40 0.05 55 / 0.08)",
+        "xl": "0 20px 40px oklch(0.40 0.05 55 / 0.18)",
+        "2xl": "0 28px 56px oklch(0.40 0.05 55 / 0.22)"
+    },
+    "spacing": null
+}

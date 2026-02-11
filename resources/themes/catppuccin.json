@@ -1,0 +1,66 @@
+{
+    "name": "Catppuccin",
+    "description": "Soothing pastel purple and lavender tones from the popular dev theme",
+    "fonts": {
+        "sans": "Montserrat, sans-serif",
+        "mono": "Fira Code, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.52 0.20 290)",
+        "accent-content": "oklch(0.52 0.20 290)",
+        "accent-foreground": "oklch(0.97 0.005 290)",
+        "zinc": {
+            "50": "oklch(0.98 0.004 290)",
+            "100": "oklch(0.96 0.006 290)",
+            "200": "oklch(0.925 0.008 290)",
+            "300": "oklch(0.87 0.01 290)",
+            "400": "oklch(0.70 0.012 290)",
+            "500": "oklch(0.55 0.012 290)",
+            "600": "oklch(0.45 0.01 290)",
+            "700": "oklch(0.37 0.01 290)",
+            "800": "oklch(0.27 0.008 290)",
+            "900": "oklch(0.20 0.008 290)",
+            "950": "oklch(0.14 0.006 290)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.78 0.10 300)",
+        "accent-content": "oklch(0.78 0.10 300)",
+        "accent-foreground": "oklch(0.15 0.015 290)",
+        "zinc": {
+            "50": "oklch(0.98 0.004 290)",
+            "100": "oklch(0.96 0.006 290)",
+            "200": "oklch(0.925 0.008 290)",
+            "300": "oklch(0.87 0.01 290)",
+            "400": "oklch(0.70 0.012 290)",
+            "500": "oklch(0.55 0.012 290)",
+            "600": "oklch(0.45 0.01 290)",
+            "700": "oklch(0.37 0.01 290)",
+            "800": "oklch(0.27 0.01 290)",
+            "900": "oklch(0.20 0.012 290)",
+            "950": "oklch(0.13 0.01 290)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.225rem",
+        "md": "0.35rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.40 0.03 290 / 0.06)",
+        "xs": "0 1px 3px oklch(0.40 0.03 290 / 0.09), 0 1px 2px oklch(0.40 0.03 290 / 0.06)",
+        "sm": "0 2px 6px oklch(0.40 0.03 290 / 0.10), 0 1px 3px oklch(0.40 0.03 290 / 0.07)",
+        "DEFAULT": "0 4px 10px oklch(0.40 0.03 290 / 0.10), 0 2px 4px oklch(0.40 0.03 290 / 0.07)",
+        "md": "0 6px 16px oklch(0.40 0.03 290 / 0.12), 0 2px 6px oklch(0.40 0.03 290 / 0.07)",
+        "lg": "0 12px 28px oklch(0.40 0.03 290 / 0.14), 0 4px 10px oklch(0.40 0.03 290 / 0.07)",
+        "xl": "0 20px 40px oklch(0.40 0.03 290 / 0.16)",
+        "2xl": "0 28px 56px oklch(0.40 0.03 290 / 0.20)"
+    },
+    "spacing": null
+}

@@ -1,0 +1,66 @@
+{
+    "name": "Nord",
+    "description": "Arctic-inspired muted blue-gray palette with clean, minimal aesthetics",
+    "fonts": {
+        "sans": "IBM Plex Sans, sans-serif",
+        "mono": "IBM Plex Mono, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.55 0.08 240)",
+        "accent-content": "oklch(0.55 0.08 240)",
+        "accent-foreground": "oklch(0.96 0.005 230)",
+        "zinc": {
+            "50": "oklch(0.98 0.004 230)",
+            "100": "oklch(0.96 0.006 230)",
+            "200": "oklch(0.93 0.008 230)",
+            "300": "oklch(0.88 0.01 230)",
+            "400": "oklch(0.72 0.012 230)",
+            "500": "oklch(0.57 0.012 230)",
+            "600": "oklch(0.47 0.01 230)",
+            "700": "oklch(0.38 0.01 230)",
+            "800": "oklch(0.28 0.008 230)",
+            "900": "oklch(0.22 0.008 230)",
+            "950": "oklch(0.16 0.006 230)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.68 0.07 220)",
+        "accent-content": "oklch(0.68 0.07 220)",
+        "accent-foreground": "oklch(0.16 0.01 230)",
+        "zinc": {
+            "50": "oklch(0.98 0.004 230)",
+            "100": "oklch(0.96 0.006 230)",
+            "200": "oklch(0.93 0.008 230)",
+            "300": "oklch(0.88 0.01 230)",
+            "400": "oklch(0.72 0.012 230)",
+            "500": "oklch(0.57 0.012 230)",
+            "600": "oklch(0.47 0.01 230)",
+            "700": "oklch(0.38 0.01 230)",
+            "800": "oklch(0.28 0.008 230)",
+            "900": "oklch(0.22 0.008 230)",
+            "950": "oklch(0.16 0.006 230)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.2rem",
+        "md": "0.3rem",
+        "lg": "0.4rem",
+        "xl": "0.6rem",
+        "2xl": "0.8rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.40 0.02 230 / 0.05)",
+        "xs": "0 1px 3px oklch(0.40 0.02 230 / 0.08), 0 1px 2px oklch(0.40 0.02 230 / 0.05)",
+        "sm": "0 2px 6px oklch(0.40 0.02 230 / 0.08), 0 1px 3px oklch(0.40 0.02 230 / 0.06)",
+        "DEFAULT": "0 4px 10px oklch(0.40 0.02 230 / 0.08), 0 2px 4px oklch(0.40 0.02 230 / 0.06)",
+        "md": "0 6px 16px oklch(0.40 0.02 230 / 0.10), 0 2px 6px oklch(0.40 0.02 230 / 0.06)",
+        "lg": "0 12px 28px oklch(0.40 0.02 230 / 0.12), 0 4px 10px oklch(0.40 0.02 230 / 0.06)",
+        "xl": "0 20px 40px oklch(0.40 0.02 230 / 0.14)",
+        "2xl": "0 28px 56px oklch(0.40 0.02 230 / 0.18)"
+    },
+    "spacing": null
+}

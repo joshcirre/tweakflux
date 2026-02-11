@@ -43,8 +43,16 @@ If the styles aren't loading, you can manually add `@tweakfluxStyles` to your la
 | **Default** | Flux defaults — zinc neutrals, standard radius, Inter font |
 | **Bubblegum** | Playful pink accents with warm rose-tinted neutrals and rounded corners |
 | **Brutalist** | Sharp corners, hard shadows, high contrast monospace aesthetic |
+| **Catppuccin** | Soothing pastel purple and lavender tones from the popular dev theme |
+| **Claude** | Warm terra cotta and cream tones inspired by Anthropic's Claude |
+| **Coffee** | Warm brown and gold tones with a cozy coffeehouse feel |
+| **Dracula** | The iconic dark palette with vibrant pastels on deep purple-gray backgrounds |
 | **Forest** | Warm earthy greens with stone-tinted neutrals and muted shadows |
+| **Nord** | Arctic-inspired muted blue-gray palette with clean, minimal aesthetics |
 | **Ocean** | Cool blue-tinted slate palette with sky accents |
+| **Retro** | Warm vintage parchment tones with salmon and sage green accents |
+| **Sunset** | Warm coral and orange tones inspired by golden hour horizons |
+| **Synthwave** | Neon 80s retrowave with hot pink accents on deep purple backgrounds |
 
 ## Creating Your Own Theme
 

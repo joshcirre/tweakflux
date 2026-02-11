@@ -1,0 +1,66 @@
+{
+    "name": "Dracula",
+    "description": "The iconic dark palette with vibrant pastels on deep purple-gray backgrounds",
+    "fonts": {
+        "sans": "Fira Sans, sans-serif",
+        "mono": "Fira Code, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.65 0.20 330)",
+        "accent-content": "oklch(0.65 0.20 330)",
+        "accent-foreground": "oklch(0.98 0.005 280)",
+        "zinc": {
+            "50": "oklch(0.985 0.005 280)",
+            "100": "oklch(0.965 0.008 280)",
+            "200": "oklch(0.925 0.01 280)",
+            "300": "oklch(0.87 0.012 280)",
+            "400": "oklch(0.70 0.015 280)",
+            "500": "oklch(0.55 0.015 280)",
+            "600": "oklch(0.45 0.014 280)",
+            "700": "oklch(0.37 0.012 280)",
+            "800": "oklch(0.27 0.01 280)",
+            "900": "oklch(0.20 0.008 280)",
+            "950": "oklch(0.14 0.006 280)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.72 0.15 295)",
+        "accent-content": "oklch(0.72 0.15 295)",
+        "accent-foreground": "oklch(0.16 0.02 280)",
+        "zinc": {
+            "50": "oklch(0.985 0.005 280)",
+            "100": "oklch(0.965 0.008 280)",
+            "200": "oklch(0.925 0.01 280)",
+            "300": "oklch(0.87 0.012 280)",
+            "400": "oklch(0.70 0.015 280)",
+            "500": "oklch(0.55 0.015 280)",
+            "600": "oklch(0.45 0.014 280)",
+            "700": "oklch(0.37 0.012 280)",
+            "800": "oklch(0.27 0.01 280)",
+            "900": "oklch(0.20 0.012 280)",
+            "950": "oklch(0.14 0.01 280)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.25rem",
+        "md": "0.5rem",
+        "lg": "0.75rem",
+        "xl": "1rem",
+        "2xl": "1.25rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.30 0.03 280 / 0.08)",
+        "xs": "0 1px 3px oklch(0.30 0.03 280 / 0.12), 0 1px 2px oklch(0.30 0.03 280 / 0.08)",
+        "sm": "0 2px 6px oklch(0.30 0.03 280 / 0.14), 0 1px 3px oklch(0.30 0.03 280 / 0.10)",
+        "DEFAULT": "0 4px 10px oklch(0.30 0.03 280 / 0.14), 0 2px 4px oklch(0.30 0.03 280 / 0.10)",
+        "md": "0 6px 16px oklch(0.30 0.03 280 / 0.16), 0 2px 6px oklch(0.30 0.03 280 / 0.10)",
+        "lg": "0 12px 28px oklch(0.30 0.03 280 / 0.18), 0 4px 10px oklch(0.30 0.03 280 / 0.10)",
+        "xl": "0 20px 40px oklch(0.30 0.03 280 / 0.20)",
+        "2xl": "0 28px 56px oklch(0.30 0.03 280 / 0.24)"
+    },
+    "spacing": null
+}
