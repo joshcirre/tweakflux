@@ -51,6 +51,7 @@ If the styles aren't loading, you can manually add `@tweakfluxStyles` to your la
 | **Laravel** | Boxy cards, pure neutral grays, and the iconic red — modeled after laravel.com |
 | **Nord** | Arctic-inspired muted blue-gray palette with clean, minimal aesthetics |
 | **Ocean** | Cool blue-tinted slate palette with sky accents |
+| **Perpetuity** | Monospace teal aesthetic with tight shadows and minimal rounding |
 | **Retro** | Warm vintage parchment tones with salmon and sage green accents |
 | **Sunset** | Warm coral and orange tones inspired by golden hour horizons |
 | **Synthwave** | Neon 80s retrowave with hot pink accents on deep purple backgrounds |

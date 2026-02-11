@@ -1,0 +1,66 @@
+{
+    "name": "Perpetuity",
+    "description": "Monospace teal aesthetic with tight shadows and minimal rounding",
+    "fonts": {
+        "sans": "Source Code Pro, monospace",
+        "mono": "Source Code Pro, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.5624 0.0947 203)",
+        "accent-content": "oklch(0.5624 0.0947 203)",
+        "accent-foreground": "oklch(1.0 0 0)",
+        "zinc": {
+            "50": "oklch(0.97 0.005 197)",
+            "100": "oklch(0.949 0.009 197)",
+            "200": "oklch(0.93 0.011 197)",
+            "300": "oklch(0.893 0.021 204)",
+            "400": "oklch(0.72 0.04 200)",
+            "500": "oklch(0.543 0.059 202)",
+            "600": "oklch(0.45 0.06 208)",
+            "700": "oklch(0.377 0.062 213)",
+            "800": "oklch(0.29 0.04 218)",
+            "900": "oklch(0.22 0.03 222)",
+            "950": "oklch(0.15 0.02 224)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.852 0.127 195)",
+        "accent-content": "oklch(0.852 0.127 195)",
+        "accent-foreground": "oklch(0.207 0.025 224)",
+        "zinc": {
+            "50": "oklch(0.97 0.005 197)",
+            "100": "oklch(0.93 0.01 197)",
+            "200": "oklch(0.852 0.02 200)",
+            "300": "oklch(0.72 0.04 200)",
+            "400": "oklch(0.661 0.098 195)",
+            "500": "oklch(0.54 0.07 202)",
+            "600": "oklch(0.427 0.063 203)",
+            "700": "oklch(0.378 0.056 217)",
+            "800": "oklch(0.289 0.041 219)",
+            "900": "oklch(0.229 0.028 216)",
+            "950": "oklch(0.207 0.025 224)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0",
+        "md": "0",
+        "lg": "0.125rem",
+        "xl": "0.25rem",
+        "2xl": "0.375rem"
+    },
+    "shadows": {
+        "2xs": "1px 1px 2px oklch(0.42 0.07 195 / 0.07)",
+        "xs": "1px 1px 2px oklch(0.42 0.07 195 / 0.07)",
+        "sm": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 1px 2px -1px oklch(0.42 0.07 195 / 0.15)",
+        "DEFAULT": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 1px 2px -1px oklch(0.42 0.07 195 / 0.15)",
+        "md": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 2px 4px -1px oklch(0.42 0.07 195 / 0.15)",
+        "lg": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 4px 6px -1px oklch(0.42 0.07 195 / 0.15)",
+        "xl": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 8px 10px -1px oklch(0.42 0.07 195 / 0.15)",
+        "2xl": "1px 1px 2px oklch(0.42 0.07 195 / 0.38)"
+    },
+    "spacing": null
+}
