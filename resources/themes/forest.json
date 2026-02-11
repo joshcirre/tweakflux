@@ -1,0 +1,66 @@
+{
+    "name": "Forest",
+    "description": "Warm earthy greens with stone-tinted neutrals and muted shadows",
+    "fonts": {
+        "sans": "DM Sans, sans-serif",
+        "mono": null,
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.50 0.12 155)",
+        "accent-content": "oklch(0.50 0.12 155)",
+        "accent-foreground": "oklch(0.98 0.005 155)",
+        "zinc": {
+            "50": "oklch(0.985 0.006 95)",
+            "100": "oklch(0.96 0.008 95)",
+            "200": "oklch(0.92 0.012 95)",
+            "300": "oklch(0.87 0.014 95)",
+            "400": "oklch(0.68 0.018 95)",
+            "500": "oklch(0.56 0.016 95)",
+            "600": "oklch(0.46 0.014 95)",
+            "700": "oklch(0.38 0.012 95)",
+            "800": "oklch(0.28 0.01 95)",
+            "900": "oklch(0.21 0.008 95)",
+            "950": "oklch(0.15 0.006 95)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.72 0.1 155)",
+        "accent-content": "oklch(0.72 0.1 155)",
+        "accent-foreground": "oklch(0.16 0.02 155)",
+        "zinc": {
+            "50": "oklch(0.985 0.006 95)",
+            "100": "oklch(0.96 0.008 95)",
+            "200": "oklch(0.92 0.012 95)",
+            "300": "oklch(0.87 0.014 95)",
+            "400": "oklch(0.68 0.018 95)",
+            "500": "oklch(0.56 0.016 95)",
+            "600": "oklch(0.46 0.014 95)",
+            "700": "oklch(0.38 0.012 95)",
+            "800": "oklch(0.28 0.01 95)",
+            "900": "oklch(0.21 0.008 95)",
+            "950": "oklch(0.15 0.006 95)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.175rem",
+        "md": "0.375rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "2xl": "1rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.3 0.015 95 / 0.05)",
+        "xs": "0 1px 2px oklch(0.3 0.015 95 / 0.06), 0 1px 1px oklch(0.3 0.015 95 / 0.04)",
+        "sm": "0 2px 4px oklch(0.3 0.015 95 / 0.08), 0 1px 2px oklch(0.3 0.015 95 / 0.04)",
+        "DEFAULT": "0 3px 8px oklch(0.3 0.015 95 / 0.08), 0 1px 3px oklch(0.3 0.015 95 / 0.04)",
+        "md": "0 5px 14px oklch(0.3 0.015 95 / 0.1), 0 2px 4px oklch(0.3 0.015 95 / 0.04)",
+        "lg": "0 10px 24px oklch(0.3 0.015 95 / 0.1), 0 3px 8px oklch(0.3 0.015 95 / 0.04)",
+        "xl": "0 18px 36px oklch(0.3 0.015 95 / 0.12)",
+        "2xl": "0 24px 48px oklch(0.3 0.015 95 / 0.14)"
+    },
+    "spacing": null
+}

@@ -1,0 +1,66 @@
+{
+    "name": "Brutalist",
+    "description": "Sharp corners, hard shadows, high contrast monospace aesthetic",
+    "fonts": {
+        "sans": "Space Mono, monospace",
+        "mono": "Space Mono, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.0 0.0 0)",
+        "accent-content": "oklch(0.0 0.0 0)",
+        "accent-foreground": "oklch(1.0 0.0 0)",
+        "zinc": {
+            "50": "oklch(0.99 0 0)",
+            "100": "oklch(0.96 0 0)",
+            "200": "oklch(0.90 0 0)",
+            "300": "oklch(0.82 0 0)",
+            "400": "oklch(0.62 0 0)",
+            "500": "oklch(0.45 0 0)",
+            "600": "oklch(0.35 0 0)",
+            "700": "oklch(0.25 0 0)",
+            "800": "oklch(0.18 0 0)",
+            "900": "oklch(0.12 0 0)",
+            "950": "oklch(0.06 0 0)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(1.0 0.0 0)",
+        "accent-content": "oklch(1.0 0.0 0)",
+        "accent-foreground": "oklch(0.0 0.0 0)",
+        "zinc": {
+            "50": "oklch(0.99 0 0)",
+            "100": "oklch(0.96 0 0)",
+            "200": "oklch(0.90 0 0)",
+            "300": "oklch(0.82 0 0)",
+            "400": "oklch(0.62 0 0)",
+            "500": "oklch(0.45 0 0)",
+            "600": "oklch(0.35 0 0)",
+            "700": "oklch(0.25 0 0)",
+            "800": "oklch(0.18 0 0)",
+            "900": "oklch(0.12 0 0)",
+            "950": "oklch(0.06 0 0)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0",
+        "md": "0",
+        "lg": "0",
+        "xl": "0",
+        "2xl": "0"
+    },
+    "shadows": {
+        "2xs": "2px 2px 0 oklch(0 0 0)",
+        "xs": "3px 3px 0 oklch(0 0 0)",
+        "sm": "4px 4px 0 oklch(0 0 0)",
+        "DEFAULT": "4px 4px 0 oklch(0 0 0)",
+        "md": "5px 5px 0 oklch(0 0 0)",
+        "lg": "6px 6px 0 oklch(0 0 0)",
+        "xl": "8px 8px 0 oklch(0 0 0)",
+        "2xl": "10px 10px 0 oklch(0 0 0)"
+    },
+    "spacing": null
+}

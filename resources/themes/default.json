@@ -1,0 +1,66 @@
+{
+    "name": "Default",
+    "description": "Flux defaults — zinc neutrals, standard radius, Inter font",
+    "fonts": {
+        "sans": null,
+        "mono": null,
+        "serif": null,
+        "urls": []
+    },
+    "light": {
+        "accent": null,
+        "accent-content": null,
+        "accent-foreground": null,
+        "zinc": {
+            "50": null,
+            "100": null,
+            "200": null,
+            "300": null,
+            "400": null,
+            "500": null,
+            "600": null,
+            "700": null,
+            "800": null,
+            "900": null,
+            "950": null
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": null,
+        "accent-content": null,
+        "accent-foreground": null,
+        "zinc": {
+            "50": null,
+            "100": null,
+            "200": null,
+            "300": null,
+            "400": null,
+            "500": null,
+            "600": null,
+            "700": null,
+            "800": null,
+            "900": null,
+            "950": null
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": null,
+        "md": null,
+        "lg": null,
+        "xl": null,
+        "2xl": null
+    },
+    "shadows": {
+        "2xs": null,
+        "xs": null,
+        "sm": null,
+        "DEFAULT": null,
+        "md": null,
+        "lg": null,
+        "xl": null,
+        "2xl": null
+    },
+    "spacing": null
+}

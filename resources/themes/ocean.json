@@ -1,0 +1,66 @@
+{
+    "name": "Ocean",
+    "description": "Cool blue-tinted slate palette with sky accents",
+    "fonts": {
+        "sans": "Source Sans 3, sans-serif",
+        "mono": null,
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..700&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.55 0.15 230)",
+        "accent-content": "oklch(0.55 0.15 230)",
+        "accent-foreground": "oklch(0.98 0.005 230)",
+        "zinc": {
+            "50": "oklch(0.985 0.005 230)",
+            "100": "oklch(0.96 0.008 230)",
+            "200": "oklch(0.92 0.012 230)",
+            "300": "oklch(0.87 0.016 230)",
+            "400": "oklch(0.68 0.025 230)",
+            "500": "oklch(0.55 0.025 230)",
+            "600": "oklch(0.44 0.022 230)",
+            "700": "oklch(0.36 0.02 230)",
+            "800": "oklch(0.26 0.016 230)",
+            "900": "oklch(0.19 0.012 230)",
+            "950": "oklch(0.13 0.01 230)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.72 0.12 210)",
+        "accent-content": "oklch(0.72 0.12 210)",
+        "accent-foreground": "oklch(0.16 0.02 230)",
+        "zinc": {
+            "50": "oklch(0.985 0.005 230)",
+            "100": "oklch(0.96 0.008 230)",
+            "200": "oklch(0.92 0.012 230)",
+            "300": "oklch(0.87 0.016 230)",
+            "400": "oklch(0.68 0.025 230)",
+            "500": "oklch(0.55 0.025 230)",
+            "600": "oklch(0.44 0.022 230)",
+            "700": "oklch(0.36 0.02 230)",
+            "800": "oklch(0.26 0.016 230)",
+            "900": "oklch(0.19 0.012 230)",
+            "950": "oklch(0.13 0.01 230)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.2rem",
+        "md": "0.45rem",
+        "lg": "0.7rem",
+        "xl": "1rem",
+        "2xl": "1.25rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 1px oklch(0.3 0.03 230 / 0.06)",
+        "xs": "0 1px 3px oklch(0.3 0.03 230 / 0.08), 0 1px 2px oklch(0.3 0.03 230 / 0.04)",
+        "sm": "0 2px 6px oklch(0.3 0.03 230 / 0.1), 0 1px 3px oklch(0.3 0.03 230 / 0.06)",
+        "DEFAULT": "0 4px 10px oklch(0.3 0.03 230 / 0.1), 0 2px 4px oklch(0.3 0.03 230 / 0.06)",
+        "md": "0 6px 16px oklch(0.3 0.03 230 / 0.12), 0 2px 6px oklch(0.3 0.03 230 / 0.06)",
+        "lg": "0 12px 28px oklch(0.3 0.03 230 / 0.14), 0 4px 10px oklch(0.3 0.03 230 / 0.06)",
+        "xl": "0 20px 40px oklch(0.3 0.03 230 / 0.16)",
+        "2xl": "0 28px 56px oklch(0.3 0.03 230 / 0.2)"
+    },
+    "spacing": null
+}
