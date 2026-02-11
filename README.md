@@ -69,6 +69,14 @@ This scaffolds a JSON file at `resources/themes/my-theme.json`. Set any value to
 }
 ```
 
+## Using with Flux's Built-in Theming
+
+TweakFlux replaces Flux's manual `@theme` theming approach. If you already have `@theme` or `@layer theme` blocks in your `app.css` for Flux colors/accents, TweakFlux will override them — the import is appended to the end of your CSS file so it always takes precedence.
+
+You can safely remove any existing Flux `@theme` color blocks from `app.css` once you're using TweakFlux, since TweakFlux manages the same variables through its JSON themes.
+
+Published Flux components (`php artisan flux:publish`) work seamlessly — they read the same CSS custom properties that TweakFlux overrides.
+
 ## How It Works
 
 Flux UI components resolve their styles through Tailwind v4 CSS custom properties. TweakFlux generates a stylesheet that overrides these properties at `:root` (and `.dark` for dark mode), so every component picks up the changes natively — no patches, no vendor modifications.

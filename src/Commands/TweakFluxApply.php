@@ -61,7 +61,7 @@ final class TweakFluxApply extends Command
             return;
         }
 
-        File::put($entryPoint, self::IMPORT_STATEMENT."\n".$contents);
+        File::put($entryPoint, $contents."\n".self::IMPORT_STATEMENT."\n");
 
         $this->info('Added TweakFlux import to '.basename($entryPoint));
     }
