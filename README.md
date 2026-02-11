@@ -6,22 +6,16 @@ Deep theming for [Flux UI](https://fluxui.dev). Override Tailwind v4 CSS custom 
 
 ```bash
 composer require joshcirre/tweakflux
-```
-
-Publish the config and preset themes:
-
-```bash
-php artisan vendor:publish --tag=tweakflux-config
-php artisan vendor:publish --tag=tweakflux-themes
-```
-
-## Quick Start
-
-```bash
 php artisan tweakflux:apply bubblegum
 ```
 
 That's it. The `apply` command generates the theme CSS and automatically adds the import to your `resources/css/app.css`. With Vite running, you'll see the changes instantly.
+
+Optionally publish the config to customize paths:
+
+```bash
+php artisan vendor:publish --tag=tweakflux-config
+```
 
 ### Troubleshooting
 

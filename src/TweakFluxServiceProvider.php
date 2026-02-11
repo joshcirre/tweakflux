@@ -31,10 +31,6 @@ final class TweakFluxServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../config/tweakflux.php' => config_path('tweakflux.php'),
             ], 'tweakflux-config');
-
-            $this->publishes([
-                __DIR__.'/../resources/themes' => resource_path('themes'),
-            ], 'tweakflux-themes');
         }
     }
 

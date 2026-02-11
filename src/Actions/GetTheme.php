@@ -15,13 +15,10 @@ final class GetTheme
      */
     public function __invoke(string $name = 'default'): array
     {
-        /** @var string $themesPath */
-        $themesPath = config('tweakflux.themes_path');
+        $defaultPath = $this->resolveThemePath('default');
 
-        $defaultPath = $themesPath.'/default.json';
-
-        if (! file_exists($defaultPath)) {
-            throw new RuntimeException('Default theme file not found: '.$defaultPath);
+        if ($defaultPath === null) {
+            throw new RuntimeException('Default theme file not found.');
         }
 
         /** @var array<string, mixed> $default */
@@ -31,9 +28,9 @@ final class GetTheme
             return $default;
         }
 
-        $themePath = $themesPath.'/'.$name.'.json';
+        $themePath = $this->resolveThemePath($name);
 
-        if (! file_exists($themePath)) {
+        if ($themePath === null) {
             throw new RuntimeException('Theme not found: '.$name);
         }
 
@@ -41,6 +38,29 @@ final class GetTheme
         $theme = json_decode((string) file_get_contents($themePath), true, 512, JSON_THROW_ON_ERROR);
 
         return $this->deepMerge($default, $theme);
+    }
+
+    /**
+     * Resolve theme file path, checking user themes first then package presets.
+     */
+    private function resolveThemePath(string $name): ?string
+    {
+        /** @var string $themesPath */
+        $themesPath = config('tweakflux.themes_path');
+
+        $userPath = $themesPath.'/'.$name.'.json';
+
+        if (file_exists($userPath)) {
+            return $userPath;
+        }
+
+        $packagePath = __DIR__.'/../../resources/themes/'.$name.'.json';
+
+        if (file_exists($packagePath)) {
+            return $packagePath;
+        }
+
+        return null;
     }
 
     /**
