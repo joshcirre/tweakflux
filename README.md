@@ -117,11 +117,7 @@ return [
 
 TweakFlux ships with an AI skill for [Laravel Boost](https://laravel.com/docs/boost) that lets your coding agent generate themes from descriptions, color palettes, screenshots, or brand guidelines.
 
-```bash
-php artisan vendor:publish --tag=tweakflux-ai
-```
-
-This installs a skill at `.ai/skills/tweakflux-theme-generator/`. After running `boost:install`, you can ask your AI agent things like:
+After running `php artisan boost:install`, Boost will automatically discover and offer to install the TweakFlux skill. Then you can ask your AI agent things like:
 
 - "Create a TweakFlux theme inspired by Spotify"
 - "Generate a theme from this color palette: #1a1a2e, #16213e, #0f3460, #e94560"

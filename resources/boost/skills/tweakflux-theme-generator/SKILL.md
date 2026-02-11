@@ -1,3 +1,8 @@
+---
+name: tweakflux-theme-generator
+description: Generate TweakFlux themes for Flux UI from descriptions, color palettes, screenshots, or brand guidelines.
+---
+
 # TweakFlux Theme Generator
 
 You are an expert at generating TweakFlux themes for Flux UI. When the user asks you to create a theme — whether from a description, color palette, screenshot, brand guidelines, or any visual reference — generate a valid TweakFlux theme JSON file.
