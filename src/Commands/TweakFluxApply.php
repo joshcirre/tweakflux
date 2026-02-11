@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\File;
 use RuntimeException;
 use TweakFlux\Actions\GenerateThemeCss;
 use TweakFlux\Actions\GetTheme;
+use TweakFlux\Actions\ListThemes;
+
+use function Laravel\Prompts\info;
+use function Laravel\Prompts\select;
 
 final class TweakFluxApply extends Command
 {
@@ -18,10 +22,32 @@ final class TweakFluxApply extends Command
 
     private const IMPORT_STATEMENT = '@import "./tweakflux-theme.css";';
 
-    public function handle(GetTheme $getTheme, GenerateThemeCss $generateCss): int
+    public function handle(GetTheme $getTheme, GenerateThemeCss $generateCss, ListThemes $listThemes): int
     {
-        /** @var string $themeName */
-        $themeName = $this->argument('theme') ?? config('tweakflux.active_theme', 'default');
+        /** @var string|null $themeName */
+        $themeName = $this->argument('theme');
+
+        if ($themeName === null) {
+            $themes = $listThemes();
+
+            if ($themes === []) {
+                info('No themes found.');
+
+                return self::FAILURE;
+            }
+
+            $options = [];
+            foreach ($themes as $theme) {
+                $options[$theme['name']] = $theme['name'].' — '.$theme['description'];
+            }
+
+            /** @var string $themeName */
+            $themeName = select(
+                label: 'Which theme would you like to apply?',
+                options: $options,
+                default: config('tweakflux.active_theme', 'default'),
+            );
+        }
 
         try {
             $theme = $getTheme($themeName);
@@ -39,7 +65,7 @@ final class TweakFluxApply extends Command
         File::ensureDirectoryExists(dirname($outputPath));
         File::put($outputPath, $css);
 
-        $this->info(sprintf('Theme "%s" applied to %s', $themeName, $outputPath));
+        info(sprintf('Theme "%s" applied to %s', $themeName, $outputPath));
 
         $this->injectImport();
 
@@ -63,6 +89,6 @@ final class TweakFluxApply extends Command
 
         File::put($entryPoint, $contents."\n".self::IMPORT_STATEMENT."\n");
 
-        $this->info('Added TweakFlux import to '.basename($entryPoint));
+        info('Added TweakFlux import to '.basename($entryPoint));
     }
 }

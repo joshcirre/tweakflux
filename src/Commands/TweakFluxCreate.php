@@ -8,6 +8,8 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
+use function Laravel\Prompts\error;
+use function Laravel\Prompts\info;
 use function Laravel\Prompts\text;
 
 final class TweakFluxCreate extends Command
@@ -26,7 +28,7 @@ final class TweakFluxCreate extends Command
         $filePath = $themesPath.'/'.$slug.'.json';
 
         if (File::exists($filePath)) {
-            $this->error('Theme file already exists: '.$filePath);
+            error('Theme file already exists: '.$filePath);
 
             return self::FAILURE;
         }
@@ -73,7 +75,7 @@ final class TweakFluxCreate extends Command
         File::ensureDirectoryExists($themesPath);
         File::put($filePath, json_encode($skeleton, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
 
-        $this->info('Created theme: '.$filePath);
+        info('Created theme: '.$filePath);
 
         return self::SUCCESS;
     }

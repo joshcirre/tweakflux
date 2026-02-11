@@ -7,6 +7,9 @@ namespace TweakFlux\Commands;
 use Illuminate\Console\Command;
 use TweakFlux\Actions\ListThemes;
 
+use function Laravel\Prompts\info;
+use function Laravel\Prompts\table;
+
 final class TweakFluxList extends Command
 {
     protected $signature = 'tweakflux:list';
@@ -18,21 +21,24 @@ final class TweakFluxList extends Command
         $themes = $listThemes();
 
         if ($themes === []) {
-            $this->warn('No themes found.');
+            info('No themes found.');
 
             return self::SUCCESS;
         }
 
+        /** @var string $activeTheme */
         $activeTheme = config('tweakflux.active_theme', 'default');
 
         $rows = array_map(fn (array $theme): array => [
-            $theme['name'] === $activeTheme ? '●' : '',
+            $theme['name'] === $activeTheme ? ' ●' : '',
             $theme['name'],
-            $theme['file'],
             $theme['description'],
         ], $themes);
 
-        $this->table(['', 'Name', 'File', 'Description'], $rows);
+        table(
+            headers: ['', 'Theme', 'Description'],
+            rows: $rows,
+        );
 
         return self::SUCCESS;
     }
