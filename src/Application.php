@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TweakFlux;
 
+use Composer\InstalledVersions;
 use Symfony\Component\Console\Application as SymfonyApplication;
 use TweakFlux\Commands\ApplyCommand;
 use TweakFlux\Commands\BoostCommand;
@@ -15,7 +16,9 @@ final class Application extends SymfonyApplication
 {
     public function __construct()
     {
-        parent::__construct('TweakFlux', '1.0.0');
+        $version = InstalledVersions::getPrettyVersion('joshcirre/tweakflux') ?? 'dev';
+
+        parent::__construct('TweakFlux', $version);
 
         $this->add(new ListCommand());
         $this->add(new ApplyCommand());
