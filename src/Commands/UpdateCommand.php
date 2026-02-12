@@ -43,7 +43,13 @@ final class UpdateCommand extends Command
             return Command::FAILURE;
         }
 
-        info('TweakFlux updated successfully!');
+        $wasUpdated = str_contains($result['output'], 'Upgrading joshcirre/tweakflux');
+
+        if ($wasUpdated) {
+            info('TweakFlux updated successfully!');
+        } else {
+            info('You\'re already using the latest version of TweakFlux.');
+        }
 
         return Command::SUCCESS;
     }
