@@ -6,9 +6,10 @@ Activate the `tweakflux-theme-generator` skill when the user asks to create, gen
 
 ## Available Commands
 
-- `php artisan tweakflux:apply {theme?}` — Apply a theme (interactive picker if no name given)
-- `php artisan tweakflux:list` — List all available themes
-- `php artisan tweakflux:create {name}` — Scaffold a new theme JSON file
+- `tweakflux apply {theme?}` — Apply a theme (interactive picker if no name given)
+- `tweakflux list` — List all available themes
+- `tweakflux create {name}` — Scaffold a new theme JSON file
+- `tweakflux boost` — Copy Boost guidelines and skills into your project
 
 ## Theme Files
 

@@ -8,6 +8,10 @@ use RuntimeException;
 
 final class GetTheme
 {
+    public function __construct(
+        private readonly string $userThemesPath,
+    ) {}
+
     /**
      * Load a theme by name, deep-merged onto the default theme.
      *
@@ -45,10 +49,7 @@ final class GetTheme
      */
     private function resolveThemePath(string $name): ?string
     {
-        /** @var string $themesPath */
-        $themesPath = config('tweakflux.themes_path');
-
-        $userPath = $themesPath.'/'.$name.'.json';
+        $userPath = $this->userThemesPath.'/'.$name.'.json';
 
         if (file_exists($userPath)) {
             return $userPath;

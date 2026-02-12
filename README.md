@@ -4,37 +4,42 @@ Deep theming for [Flux UI](https://fluxui.dev). Override Tailwind v4 CSS custom 
 
 ## Installation
 
-```bash
-composer require joshcirre/tweakflux
-php artisan tweakflux:apply bubblegum
-```
-
-That's it. The `apply` command generates the theme CSS and automatically adds the import to your `resources/css/app.css`. With Vite running, you'll see the changes instantly.
-
-Optionally publish the config to customize paths:
+### Global (recommended)
 
 ```bash
-php artisan vendor:publish --tag=tweakflux-config
+composer global require joshcirre/tweakflux
 ```
 
-### Troubleshooting
+Then run from any project:
 
-If the styles aren't loading, you can manually add `@tweakfluxStyles` to your layout's `<head>` as a fallback:
-
-```blade
-<head>
-    ...
-    @tweakfluxStyles
-</head>
+```bash
+tweakflux apply bubblegum
 ```
 
-## Available Commands
+### Per-project
+
+```bash
+composer require --dev joshcirre/tweakflux
+```
+
+Then run via vendor bin:
+
+```bash
+./vendor/bin/tweakflux apply bubblegum
+```
+
+The `apply` command generates the theme CSS at `resources/css/tweakflux-theme.css` and automatically adds the import to your `resources/css/app.css`. With Vite running, you'll see the changes instantly.
+
+If `app.css` doesn't exist, the command prints the import and font URLs for you to add manually.
+
+## Commands
 
 | Command | Description |
 |---------|-------------|
-| `tweakflux:apply {theme?}` | Apply a theme (interactive picker if no name given) |
-| `tweakflux:list` | List all available themes |
-| `tweakflux:create {name}` | Scaffold a new theme JSON file |
+| `tweakflux apply {theme?}` | Apply a theme (interactive picker if no name given) |
+| `tweakflux list` | List all available themes |
+| `tweakflux create {name}` | Scaffold a new theme JSON file |
+| `tweakflux boost` | Copy Boost guidelines and skills into your project |
 
 ## Preset Themes
 
@@ -59,7 +64,7 @@ If the styles aren't loading, you can manually add `@tweakfluxStyles` to your la
 ## Creating Your Own Theme
 
 ```bash
-php artisan tweakflux:create my-theme
+tweakflux create my-theme
 ```
 
 This scaffolds a JSON file at `resources/themes/my-theme.json`. Set any value to `null` to keep the Flux default. Only override what you need.
@@ -79,6 +84,16 @@ This scaffolds a JSON file at `resources/themes/my-theme.json`. Set any value to
 }
 ```
 
+## Path Conventions
+
+All paths are relative to your project root (cwd):
+
+| Path | Purpose |
+|------|---------|
+| `./resources/themes/` | User theme JSON files |
+| `./resources/css/tweakflux-theme.css` | Generated CSS output |
+| `./resources/css/app.css` | CSS entry point (for import injection) |
+
 ## Using with Flux's Built-in Theming
 
 TweakFlux replaces Flux's manual `@theme` theming approach. If you already have `@theme` or `@layer theme` blocks in your `app.css` for Flux colors/accents, TweakFlux will override them — the import is appended to the end of your CSS file so it always takes precedence.
@@ -93,19 +108,6 @@ Flux UI components resolve their styles through Tailwind v4 CSS custom propertie
 
 The generated CSS uses Flux's own `@layer theme` pattern for dark mode, ensuring proper specificity and compatibility.
 
-## Configuration
-
-Published to `config/tweakflux.php`:
-
-```php
-return [
-    'active_theme' => env('TWEAKFLUX_THEME', 'default'),
-    'themes_path' => resource_path('themes'),
-    'output_path' => resource_path('css/tweakflux-theme.css'),
-    'css_entry_point' => resource_path('css/app.css'),
-];
-```
-
 ## What You Can Override
 
 - **Fonts** — sans, mono, serif families + Google Fonts URLs
@@ -119,7 +121,7 @@ return [
 
 TweakFlux ships with AI guidelines and a skill for [Laravel Boost](https://laravel.com/docs/boost) that lets your coding agent generate themes from descriptions, color palettes, screenshots, or brand guidelines.
 
-After running `php artisan boost:install`, Boost will automatically discover the TweakFlux guideline and offer to install it. Then you can ask your AI agent things like:
+Run `tweakflux boost` to copy the guidelines and skills into your project, then ask your AI agent things like:
 
 - "Create a TweakFlux theme inspired by Spotify"
 - "Generate a theme from this color palette: #1a1a2e, #16213e, #0f3460, #e94560"
@@ -130,7 +132,6 @@ The agent will generate a valid theme JSON file and apply it for you.
 ## Requirements
 
 - PHP 8.2+
-- Laravel 11 or 12
 - Flux UI (free or pro)
 - Tailwind CSS v4
 

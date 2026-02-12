@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace TweakFlux\Actions;
 
-use Illuminate\Support\Facades\File;
-
 final class ListThemes
 {
+    public function __construct(
+        private readonly string $userThemesPath,
+    ) {}
+
     /**
      * Discover all theme JSON files and return their metadata.
      *
@@ -19,10 +21,7 @@ final class ListThemes
         $seen = [];
 
         // User themes take priority
-        /** @var string $themesPath */
-        $themesPath = config('tweakflux.themes_path');
-
-        $this->collectThemes($themesPath, $themes, $seen);
+        $this->collectThemes($this->userThemesPath, $themes, $seen);
 
         // Then package presets
         $packagePath = __DIR__.'/../../resources/themes';
@@ -38,12 +37,15 @@ final class ListThemes
      */
     private function collectThemes(string $path, array &$themes, array &$seen): void
     {
-        if (! File::isDirectory($path)) {
+        if (! is_dir($path)) {
             return;
         }
 
-        /** @var list<string> $files */
-        $files = File::glob($path.'/*.json');
+        $files = glob($path.'/*.json');
+
+        if ($files === false) {
+            return;
+        }
 
         foreach ($files as $file) {
             $name = pathinfo($file, PATHINFO_FILENAME);
@@ -52,8 +54,14 @@ final class ListThemes
                 continue;
             }
 
+            $contents = file_get_contents($file);
+
+            if ($contents === false) {
+                continue;
+            }
+
             /** @var array<string, mixed> $data */
-            $data = json_decode(File::get($file), true, 512, JSON_THROW_ON_ERROR);
+            $data = json_decode($contents, true, 512, JSON_THROW_ON_ERROR);
 
             $description = $data['description'] ?? '';
 

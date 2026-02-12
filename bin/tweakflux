@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+// Resolve autoloader: global install, local install, or development
+$autoloaders = [
+    __DIR__.'/../../../autoload.php',       // global: vendor/bin/tweakflux → vendor/joshcirre/tweakflux/bin/
+    __DIR__.'/../vendor/autoload.php',      // local dev: bin/tweakflux → vendor/autoload.php
+];
+
+foreach ($autoloaders as $autoloader) {
+    if (file_exists($autoloader)) {
+        require $autoloader;
+
+        break;
+    }
+}
+
+$app = new TweakFlux\Application();
+$app->run();

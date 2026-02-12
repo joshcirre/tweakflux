@@ -3,11 +3,11 @@
     "type": "library",
     "description": "Deep theming for Flux UI. Override Tailwind v4 CSS custom properties to transform every Flux component.",
     "keywords": [
-        "laravel",
-        "livewire",
         "flux",
         "theming",
-        "tailwind"
+        "tailwind",
+        "livewire",
+        "cli"
     ],
     "license": "MIT",
     "authors": [
@@ -18,11 +18,9 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/console": "^11.0 || ^12.0",
-        "illuminate/support": "^11.0 || ^12.0"
+        "laravel/prompts": "^0.3"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0 || ^10.0",
         "pestphp/pest": "^3.0 || ^4.0"
     },
     "autoload": {
@@ -35,13 +33,9 @@
             "TweakFlux\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "TweakFlux\\TweakFluxServiceProvider"
-            ]
-        }
-    },
+    "bin": [
+        "bin/tweakflux"
+    ],
     "config": {
         "sort-packages": true,
         "allow-plugins": {

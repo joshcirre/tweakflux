@@ -130,7 +130,7 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
 ## After Generating
 
 1. Save the JSON file to `resources/themes/{slug}.json`.
-2. Run `php artisan tweakflux:apply {slug}` to generate the CSS.
+2. Run `tweakflux apply {slug}` to generate the CSS.
 3. If Vite is running, the changes appear instantly.
 
 ## Example: Complete Theme

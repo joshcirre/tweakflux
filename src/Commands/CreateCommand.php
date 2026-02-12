@@ -4,38 +4,40 @@ declare(strict_types=1);
 
 namespace TweakFlux\Commands;
 
-use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\text;
 
-final class TweakFluxCreate extends Command
+final class CreateCommand extends Command
 {
-    protected $signature = 'tweakflux:create {name : The theme slug (e.g. my-theme)}';
-
-    protected $description = 'Scaffold a new TweakFlux theme JSON file';
-
-    public function handle(): int
+    protected function configure(): void
     {
-        $slug = Str::slug((string) $this->argument('name'));
+        $this
+            ->setName('create')
+            ->setDescription('Scaffold a new TweakFlux theme JSON file')
+            ->addArgument('name', InputArgument::REQUIRED, 'The theme slug (e.g. my-theme)');
+    }
 
-        /** @var string $themesPath */
-        $themesPath = config('tweakflux.themes_path');
-
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $slug = $this->slugify((string) $input->getArgument('name'));
+        $themesPath = getcwd().'/resources/themes';
         $filePath = $themesPath.'/'.$slug.'.json';
 
-        if (File::exists($filePath)) {
+        if (file_exists($filePath)) {
             error('Theme file already exists: '.$filePath);
 
-            return self::FAILURE;
+            return Command::FAILURE;
         }
 
         $displayName = text(
             label: 'Theme display name',
-            default: Str::title(str_replace('-', ' ', $slug)),
+            default: ucwords(str_replace('-', ' ', $slug)),
             required: true,
         );
 
@@ -72,11 +74,22 @@ final class TweakFluxCreate extends Command
             'spacing' => null,
         ];
 
-        File::ensureDirectoryExists($themesPath);
-        File::put($filePath, json_encode($skeleton, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
+        if (! is_dir($themesPath)) {
+            mkdir($themesPath, 0755, true);
+        }
+
+        file_put_contents($filePath, json_encode($skeleton, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
 
         info('Created theme: '.$filePath);
 
-        return self::SUCCESS;
+        return Command::SUCCESS;
+    }
+
+    private function slugify(string $value): string
+    {
+        $value = strtolower(trim($value));
+        $value = (string) preg_replace('/[^a-z0-9-]/', '-', $value);
+
+        return (string) preg_replace('/-+/', '-', trim($value, '-'));
     }
 }
