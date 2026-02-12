@@ -9,6 +9,7 @@ use TweakFlux\Commands\ApplyCommand;
 use TweakFlux\Commands\BoostCommand;
 use TweakFlux\Commands\CreateCommand;
 use TweakFlux\Commands\ListCommand;
+use TweakFlux\Commands\UpdateCommand;
 
 final class Application extends SymfonyApplication
 {
@@ -20,5 +21,6 @@ final class Application extends SymfonyApplication
         $this->add(new ApplyCommand());
         $this->add(new CreateCommand());
         $this->add(new BoostCommand());
+        $this->add(new UpdateCommand());
     }
 }
