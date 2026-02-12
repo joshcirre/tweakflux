@@ -7,6 +7,7 @@ namespace TweakFlux\Commands;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Process\Process;
 
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\warning;
@@ -17,16 +18,15 @@ final class BoostCommand extends Command
     {
         $this
             ->setName('boost')
-            ->setDescription('Copy TweakFlux Boost guidelines and skills into your project');
+            ->setDescription('Install TweakFlux guidelines and skills for Laravel Boost');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $cwd = (string) getcwd();
-        $source = __DIR__.'/../../resources/boost';
-        $destination = $cwd.'/resources/boost';
+        $boostSource = __DIR__.'/../../resources/boost';
 
-        if (! is_dir($source)) {
+        if (! is_dir($boostSource)) {
             warning('Boost resources not found in the TweakFlux package.');
 
             return Command::FAILURE;
@@ -35,23 +35,65 @@ final class BoostCommand extends Command
         $copied = 0;
         $skipped = 0;
 
-        $this->copyDirectory($source, $destination, $copied, $skipped);
+        // Guidelines → .ai/guidelines/tweakflux/
+        $this->copyDirectory(
+            $boostSource.'/guidelines',
+            $cwd.'/.ai/guidelines/tweakflux',
+            $copied,
+            $skipped,
+        );
+
+        // Skills → .ai/skills/ (preserving subdirectory names)
+        $this->copyDirectory(
+            $boostSource.'/skills',
+            $cwd.'/.ai/skills',
+            $copied,
+            $skipped,
+        );
 
         if ($copied === 0 && $skipped > 0) {
             info(sprintf('Boost files are up to date (%d files already current).', $skipped));
         } elseif ($copied > 0) {
-            info(sprintf('Copied %d Boost file(s) to %s', $copied, $destination));
+            info(sprintf('Installed %d Boost file(s) to .ai/', $copied));
 
             if ($skipped > 0) {
                 info(sprintf('  (%d file(s) already up to date)', $skipped));
             }
         }
 
+        $this->runBoostUpdate($cwd);
+
         return Command::SUCCESS;
+    }
+
+    private function runBoostUpdate(string $cwd): void
+    {
+        $artisan = $cwd.'/artisan';
+
+        if (! file_exists($artisan)) {
+            return;
+        }
+
+        $process = new Process(['php', 'artisan', 'boost:update'], $cwd);
+        $process->setTimeout(30);
+
+        try {
+            $process->run();
+
+            if ($process->isSuccessful()) {
+                info('Ran boost:update to register guidelines and skills.');
+            }
+        } catch (\Throwable) {
+            // Boost may not be installed — that's fine
+        }
     }
 
     private function copyDirectory(string $source, string $destination, int &$copied, int &$skipped): void
     {
+        if (! is_dir($source)) {
+            return;
+        }
+
         if (! is_dir($destination)) {
             mkdir($destination, 0755, true);
         }

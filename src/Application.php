@@ -20,7 +20,5 @@ final class Application extends SymfonyApplication
         $this->add(new ApplyCommand());
         $this->add(new CreateCommand());
         $this->add(new BoostCommand());
-
-        $this->setDefaultCommand('list');
     }
 }

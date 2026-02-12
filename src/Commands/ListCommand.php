@@ -17,7 +17,7 @@ final class ListCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('list')
+            ->setName('themes')
             ->setDescription('List all available TweakFlux themes');
     }
 
