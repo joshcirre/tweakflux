@@ -19,7 +19,7 @@ tweakflux apply bubblegum
 ### Per-project
 
 ```bash
-composer require --dev joshcirre/tweakflux
+composer require joshcirre/tweakflux --dev
 ```
 
 Then run via vendor bin:
