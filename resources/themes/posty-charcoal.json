@@ -1,0 +1,67 @@
+{
+    "name": "Posty Charcoal",
+    "description": "Muted slate Posty variant with raised buttons, cool grays, and violet-slate accents",
+    "fonts": {
+        "sans": "IBM Plex Sans, system-ui, sans-serif",
+        "mono": "IBM Plex Mono, ui-monospace, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.55 0.07 275)",
+        "accent-content": "oklch(0.48 0.08 272)",
+        "accent-foreground": "oklch(0.99 0.003 275)",
+        "zinc": {
+            "50": "oklch(0.99 0.003 270)",
+            "100": "oklch(0.97 0.005 270)",
+            "200": "oklch(0.93 0.006 272)",
+            "300": "oklch(0.87 0.008 272)",
+            "400": "oklch(0.78 0.008 274)",
+            "500": "oklch(0.65 0.008 274)",
+            "600": "oklch(0.50 0.008 272)",
+            "700": "oklch(0.38 0.008 270)",
+            "800": "oklch(0.28 0.008 270)",
+            "900": "oklch(0.20 0.010 272)",
+            "950": "oklch(0.14 0.008 272)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.70 0.07 275)",
+        "accent-content": "oklch(0.62 0.08 272)",
+        "accent-foreground": "oklch(0.10 0.005 275)",
+        "zinc": {
+            "50": "oklch(0.97 0.003 270)",
+            "100": "oklch(0.92 0.004 270)",
+            "200": "oklch(0.82 0.005 270)",
+            "300": "oklch(0.70 0.006 270)",
+            "400": "oklch(0.60 0.008 270)",
+            "500": "oklch(0.50 0.008 270)",
+            "600": "oklch(0.40 0.008 270)",
+            "700": "oklch(0.32 0.008 270)",
+            "800": "oklch(0.24 0.008 270)",
+            "900": "oklch(0.20 0.008 270)",
+            "950": "oklch(0.16 0.008 270)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.25rem",
+        "md": "0.375rem",
+        "lg": "0.375rem",
+        "xl": "0.5rem",
+        "2xl": "0.625rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 0 oklch(0.20 0.015 270)",
+        "xs": "0 2px 0 oklch(0.20 0.015 270)",
+        "sm": "0 2px 0 oklch(0.20 0.015 270 / 0.8)",
+        "DEFAULT": "0 3px 0 oklch(0.20 0.015 270 / 0.6)",
+        "md": "0 4px 0 oklch(0.20 0.015 270 / 0.5)",
+        "lg": "0 5px 0 oklch(0.20 0.015 270 / 0.4)",
+        "xl": "0 6px 0 oklch(0.20 0.015 270 / 0.35)",
+        "2xl": "0 8px 0 oklch(0.20 0.015 270 / 0.30)"
+    },
+    "css": "/* Posty Charcoal: raised buttons with muted slate tones */\n:root {\n    --posty-border: oklch(0.42 0.05 275);\n    --posty-shelf: oklch(0.36 0.06 272);\n}\n.dark {\n    --posty-border: oklch(0.40 0.04 275);\n    --posty-shelf: oklch(0.34 0.05 272);\n}\n[data-flux-button][data-flux-group-target] {\n    border: 1.5px solid var(--posty-border) !important;\n    box-shadow: 0 2px 0 0 var(--posty-shelf);\n    transform: translateY(-2px);\n    top: 2px;\n    font-weight: 700;\n    position: relative;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    transform: translateY(-3px);\n    box-shadow: 0 3px 0 0 var(--posty-shelf);\n}\n[data-flux-button][data-flux-group-target]:active {\n    transform: translateY(-1.5px);\n    box-shadow: 0 1.5px 0 0 var(--posty-shelf);\n    transition: all 100ms ease;\n}\n[data-flux-button]:disabled {\n    transform: none !important;\n    box-shadow: none !important;\n    top: 0 !important;\n}\n[data-flux-button-group] [data-flux-button] {\n    box-shadow: none !important;\n    transform: none !important;\n    top: 0 !important;\n}",
+    "spacing": null
+}

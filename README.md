@@ -60,6 +60,9 @@ If `app.css` doesn't exist, the command prints the import and font URLs for you 
 | **Ocean** | Cool blue-tinted slate palette with sky accents |
 | **Perpetuity** | Monospace teal aesthetic with tight shadows and minimal rounding |
 | **Posty** | PostHog-inspired raised buttons, warm creams, and amber accents |
+| **Posty Charcoal** | Muted slate Posty variant with raised buttons, cool grays, and violet-slate accents |
+| **Posty Fresh** | Mint green Posty variant with raised buttons, fresh neutrals, and emerald accents |
+| **Posty Ice** | Cool blue Posty variant with raised buttons, icy neutrals, and sky blue accents |
 | **Retro** | Warm vintage parchment tones with salmon and sage green accents |
 | **Sunset** | Warm coral and orange tones inspired by golden hour horizons |
 | **Synthwave** | Neon 80s retrowave with hot pink accents on deep purple backgrounds |
