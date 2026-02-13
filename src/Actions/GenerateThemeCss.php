@@ -32,11 +32,13 @@ final class GenerateThemeCss
         );
 
         if ($rootVars !== []) {
-            $lines[] = ':root {';
+            $lines[] = '@layer theme {';
+            $lines[] = '    :root {';
             foreach ($rootVars as $var => $value) {
-                $lines[] = sprintf('    %s: %s;', $var, $value);
+                $lines[] = sprintf('        %s: %s;', $var, $value);
             }
 
+            $lines[] = '    }';
             $lines[] = '}';
             $lines[] = '';
         }

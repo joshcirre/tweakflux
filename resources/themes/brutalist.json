@@ -28,7 +28,7 @@
     },
     "dark": {
         "accent": "oklch(1.0 0.0 0)",
-        "accent-content": "oklch(1.0 0.0 0)",
+        "accent-content": "oklch(0.92 0.0 0)",
         "accent-foreground": "oklch(0.0 0.0 0)",
         "zinc": {
             "50": "oklch(0.99 0 0)",
