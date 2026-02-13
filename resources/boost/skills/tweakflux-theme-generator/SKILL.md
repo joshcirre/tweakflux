@@ -78,6 +78,7 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
         "xl": "shadow value",
         "2xl": "shadow value"
     },
+    "css": "/* Optional raw CSS appended after theme variables */",
     "spacing": null
 }
 ```
@@ -121,6 +122,27 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
 - Use oklch with alpha for shadow colors: `oklch(L C H / alpha)`.
 - Larger shadows = more elevation. Scale alpha from ~0.05 (2xs) to ~0.22 (2xl).
 - For flat/brutalist themes, use hard offset shadows: `4px 4px 0 oklch(0 0 0)`.
+
+### Custom CSS
+
+- The `css` field accepts a raw CSS string that is appended **after** the `@layer theme` blocks.
+- Use this for component-level overrides that go beyond variables — e.g., button styles, glow effects, transforms.
+- Flux components use `data-flux-*` attributes for targeting: `[data-flux-button]`, `[data-flux-input]`, etc.
+- Use `[data-flux-group-target]` (attribute presence, NOT `="true"`) to target primary/filled/outline/danger button variants while excluding ghost/subtle.
+- Include dark mode variants with `.dark [data-flux-button]` when needed.
+- Set to `null` or omit entirely if no custom CSS is needed.
+- Example for raised PostHog-style buttons:
+
+```css
+[data-flux-button][data-flux-group-target] {
+    border: 1.5px solid var(--posty-border) !important;
+    box-shadow: 0 2px 0 0 var(--posty-shelf);
+    transform: translateY(-2px);
+    top: 2px;
+    font-weight: 700;
+    position: relative;
+}
+```
 
 ### Null Values
 
@@ -202,6 +224,7 @@ Here's the "Bubblegum" theme as a reference for quality and structure:
         "xl": "0 20px 40px oklch(0.65 0.15 350 / 0.18)",
         "2xl": "0 28px 56px oklch(0.65 0.15 350 / 0.22)"
     },
+    "css": null,
     "spacing": null
 }
 ```

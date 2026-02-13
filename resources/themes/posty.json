@@ -1,0 +1,67 @@
+{
+    "name": "Posty",
+    "description": "PostHog-inspired design with raised buttons, warm creams, and amber accents",
+    "fonts": {
+        "sans": "IBM Plex Sans, system-ui, sans-serif",
+        "mono": "IBM Plex Mono, ui-monospace, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.77 0.155 75)",
+        "accent-content": "oklch(0.70 0.16 72)",
+        "accent-foreground": "oklch(0.10 0.01 75)",
+        "zinc": {
+            "50": "oklch(0.99 0.005 85)",
+            "100": "oklch(0.97 0.008 85)",
+            "200": "oklch(0.93 0.010 88)",
+            "300": "oklch(0.87 0.012 88)",
+            "400": "oklch(0.78 0.012 90)",
+            "500": "oklch(0.65 0.012 90)",
+            "600": "oklch(0.50 0.012 88)",
+            "700": "oklch(0.38 0.012 85)",
+            "800": "oklch(0.28 0.012 85)",
+            "900": "oklch(0.20 0.014 88)",
+            "950": "oklch(0.14 0.012 88)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.82 0.17 75)",
+        "accent-content": "oklch(0.74 0.18 72)",
+        "accent-foreground": "oklch(0.10 0.01 75)",
+        "zinc": {
+            "50": "oklch(0.96 0.008 260)",
+            "100": "oklch(0.82 0.012 260)",
+            "200": "oklch(0.65 0.016 260)",
+            "300": "oklch(0.52 0.016 260)",
+            "400": "oklch(0.42 0.014 260)",
+            "500": "oklch(0.35 0.014 262)",
+            "600": "oklch(0.27 0.012 264)",
+            "700": "oklch(0.22 0.010 264)",
+            "800": "oklch(0.17 0.008 264)",
+            "900": "oklch(0.12 0.006 264)",
+            "950": "oklch(0.08 0.004 264)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.25rem",
+        "md": "0.375rem",
+        "lg": "0.375rem",
+        "xl": "0.5rem",
+        "2xl": "0.625rem"
+    },
+    "shadows": {
+        "2xs": "0 1px 0 oklch(0.20 0.02 80)",
+        "xs": "0 2px 0 oklch(0.20 0.02 80)",
+        "sm": "0 2px 0 oklch(0.20 0.02 80 / 0.8)",
+        "DEFAULT": "0 3px 0 oklch(0.20 0.02 80 / 0.6)",
+        "md": "0 4px 0 oklch(0.20 0.02 80 / 0.5)",
+        "lg": "0 5px 0 oklch(0.20 0.02 80 / 0.4)",
+        "xl": "0 6px 0 oklch(0.20 0.02 80 / 0.35)",
+        "2xl": "0 8px 0 oklch(0.20 0.02 80 / 0.30)"
+    },
+    "css": "/* Posty: PostHog-style raised buttons */\n/* PostHog tokens: border #B17816 (rgb 177,120,22), shadow #CD8407, orange #EB9D2A */\n/* dark: border #835C19, shadow #99660E */\n:root {\n    --posty-border: oklch(0.58 0.13 70);\n    --posty-shelf: oklch(0.52 0.14 68);\n}\n.dark {\n    --posty-border: oklch(0.47 0.10 70);\n    --posty-shelf: oklch(0.42 0.11 68);\n}\n/* Match PostHog: translateY(-2px) + top:2px = shelf stays anchored */\n[data-flux-button][data-flux-group-target] {\n    border: 1.5px solid var(--posty-border) !important;\n    box-shadow: 0 2px 0 0 var(--posty-shelf);\n    transform: translateY(-2px);\n    top: 2px;\n    font-weight: 700;\n    position: relative;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    transform: translateY(-3px);\n    box-shadow: 0 3px 0 0 var(--posty-shelf);\n}\n[data-flux-button][data-flux-group-target]:active {\n    transform: translateY(-1.5px);\n    box-shadow: 0 1.5px 0 0 var(--posty-shelf);\n    transition: all 100ms ease;\n}\n[data-flux-button]:disabled {\n    transform: none !important;\n    box-shadow: none !important;\n    top: 0 !important;\n}\n/* Reset inside button groups */\n[data-flux-button-group] [data-flux-button] {\n    box-shadow: none !important;\n    transform: none !important;\n    top: 0 !important;\n}",
+    "spacing": null
+}

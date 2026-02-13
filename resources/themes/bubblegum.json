@@ -8,9 +8,9 @@
         "urls": ["https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap"]
     },
     "light": {
-        "accent": "oklch(0.65 0.24 350)",
-        "accent-content": "oklch(0.65 0.24 350)",
-        "accent-foreground": "oklch(0.98 0.01 350)",
+        "accent": "oklch(0.65 0.24 354)",
+        "accent-content": "oklch(0.65 0.24 354)",
+        "accent-foreground": "oklch(0.98 0.01 354)",
         "zinc": {
             "50": "oklch(0.985 0.005 350)",
             "100": "oklch(0.965 0.008 350)",
@@ -27,9 +27,9 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.80 0.15 80)",
-        "accent-content": "oklch(0.80 0.15 80)",
-        "accent-foreground": "oklch(0.18 0.02 80)",
+        "accent": "oklch(0.78 0.18 354)",
+        "accent-content": "oklch(0.78 0.18 354)",
+        "accent-foreground": "oklch(0.18 0.02 354)",
         "zinc": {
             "50": "oklch(0.985 0.005 350)",
             "100": "oklch(0.965 0.008 350)",

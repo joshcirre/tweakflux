@@ -8,8 +8,8 @@
         "urls": ["https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"]
     },
     "light": {
-        "accent": "oklch(0.65 0.20 330)",
-        "accent-content": "oklch(0.65 0.20 330)",
+        "accent": "oklch(0.65 0.20 347)",
+        "accent-content": "oklch(0.65 0.20 347)",
         "accent-foreground": "oklch(0.98 0.005 280)",
         "zinc": {
             "50": "oklch(0.985 0.005 280)",
@@ -27,8 +27,8 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.72 0.15 295)",
-        "accent-content": "oklch(0.72 0.15 295)",
+        "accent": "oklch(0.75 0.18 347)",
+        "accent-content": "oklch(0.75 0.18 347)",
         "accent-foreground": "oklch(0.16 0.02 280)",
         "zinc": {
             "50": "oklch(0.985 0.005 280)",

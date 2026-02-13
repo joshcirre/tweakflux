@@ -54,9 +54,11 @@ If `app.css` doesn't exist, the command prints the import and font URLs for you 
 | **Dracula** | The iconic dark palette with vibrant pastels on deep purple-gray backgrounds |
 | **Forest** | Warm earthy greens with stone-tinted neutrals and muted shadows |
 | **Laravel** | Boxy cards, pure neutral grays, and the iconic red — modeled after laravel.com |
+| **Neon** | Hackerman terminal aesthetic with vivid green glow effects on dark backgrounds |
 | **Nord** | Arctic-inspired muted blue-gray palette with clean, minimal aesthetics |
 | **Ocean** | Cool blue-tinted slate palette with sky accents |
 | **Perpetuity** | Monospace teal aesthetic with tight shadows and minimal rounding |
+| **Posty** | PostHog-inspired raised buttons, warm creams, and amber accents |
 | **Retro** | Warm vintage parchment tones with salmon and sage green accents |
 | **Sunset** | Warm coral and orange tones inspired by golden hour horizons |
 | **Synthwave** | Neon 80s retrowave with hot pink accents on deep purple backgrounds |
@@ -116,6 +118,7 @@ The generated CSS uses Flux's own `@layer theme` pattern for dark mode, ensuring
 - **Shadows** — 2xs through 2xl
 - **Spacing** — base spacing unit
 - **Dark mode** — separate light/dark palettes per theme
+- **Custom CSS** — raw CSS appended after theme variables for component-level overrides (e.g., `[data-flux-button]` selectors)
 
 ## AI Theme Generation
 

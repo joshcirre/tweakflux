@@ -8,8 +8,8 @@
         "urls": ["https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"]
     },
     "light": {
-        "accent": "oklch(0.62 0.22 340)",
-        "accent-content": "oklch(0.62 0.22 340)",
+        "accent": "oklch(0.62 0.22 350)",
+        "accent-content": "oklch(0.62 0.22 350)",
         "accent-foreground": "oklch(0.98 0.01 310)",
         "zinc": {
             "50": "oklch(0.985 0.006 310)",
@@ -27,8 +27,8 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.75 0.20 340)",
-        "accent-content": "oklch(0.75 0.20 340)",
+        "accent": "oklch(0.75 0.20 350)",
+        "accent-content": "oklch(0.75 0.20 350)",
         "accent-foreground": "oklch(0.14 0.02 310)",
         "zinc": {
             "50": "oklch(0.985 0.006 310)",
@@ -53,14 +53,15 @@
         "2xl": "1.25rem"
     },
     "shadows": {
-        "2xs": "0 1px 2px oklch(0.55 0.15 340 / 0.10)",
-        "xs": "0 1px 4px oklch(0.55 0.15 340 / 0.15), 0 1px 2px oklch(0.55 0.15 340 / 0.10)",
-        "sm": "0 2px 8px oklch(0.55 0.15 340 / 0.16), 0 1px 3px oklch(0.55 0.15 340 / 0.10)",
-        "DEFAULT": "0 4px 12px oklch(0.55 0.15 340 / 0.16), 0 2px 4px oklch(0.55 0.15 340 / 0.10)",
-        "md": "0 6px 18px oklch(0.55 0.15 340 / 0.18), 0 2px 6px oklch(0.55 0.15 340 / 0.10)",
-        "lg": "0 12px 30px oklch(0.55 0.15 340 / 0.20), 0 4px 10px oklch(0.55 0.15 340 / 0.10)",
-        "xl": "0 20px 44px oklch(0.55 0.15 340 / 0.22)",
-        "2xl": "0 28px 60px oklch(0.55 0.15 340 / 0.26)"
+        "2xs": "0 1px 2px oklch(0.55 0.15 350 / 0.10)",
+        "xs": "0 1px 4px oklch(0.55 0.15 350 / 0.15), 0 1px 2px oklch(0.55 0.15 350 / 0.10)",
+        "sm": "0 2px 8px oklch(0.55 0.15 350 / 0.16), 0 1px 3px oklch(0.55 0.15 350 / 0.10)",
+        "DEFAULT": "0 4px 12px oklch(0.55 0.15 350 / 0.16), 0 2px 4px oklch(0.55 0.15 350 / 0.10)",
+        "md": "0 6px 18px oklch(0.55 0.15 350 / 0.18), 0 2px 6px oklch(0.55 0.15 350 / 0.10)",
+        "lg": "0 12px 30px oklch(0.55 0.15 350 / 0.20), 0 4px 10px oklch(0.55 0.15 350 / 0.10)",
+        "xl": "0 20px 44px oklch(0.55 0.15 350 / 0.22)",
+        "2xl": "0 28px 60px oklch(0.55 0.15 350 / 0.26)"
     },
+    "css": "/* Synthwave: pink glow on button hover */\n[data-flux-button][data-flux-group-target] {\n    border: 1px solid oklch(0.75 0.20 350 / 0.3) !important;\n    transition: box-shadow 150ms ease, border-color 150ms ease;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.5) !important;\n    box-shadow: 0 0 12px oklch(0.75 0.20 350 / 0.25), 0 0 4px oklch(0.75 0.20 350 / 0.15);\n}\n.dark [data-flux-button][data-flux-group-target] {\n    border-color: oklch(0.75 0.20 350 / 0.4) !important;\n}\n.dark [data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.7) !important;\n    box-shadow: 0 0 16px oklch(0.75 0.20 350 / 0.35), 0 0 6px oklch(0.75 0.20 350 / 0.25);\n}",
     "spacing": null
 }

@@ -27,8 +27,8 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.72 0.12 210)",
-        "accent-content": "oklch(0.72 0.12 210)",
+        "accent": "oklch(0.72 0.12 230)",
+        "accent-content": "oklch(0.72 0.12 230)",
         "accent-foreground": "oklch(0.16 0.02 230)",
         "zinc": {
             "50": "oklch(0.985 0.005 230)",

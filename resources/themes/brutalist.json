@@ -62,5 +62,6 @@
         "xl": "8px 8px 0 oklch(0 0 0)",
         "2xl": "10px 10px 0 oklch(0 0 0)"
     },
+    "css": "/* Brutalist: hard 2px borders on buttons */\n[data-flux-button][data-flux-group-target] {\n    border: 2px solid oklch(0 0 0) !important;\n}\n.dark [data-flux-button][data-flux-group-target] {\n    border: 2px solid oklch(1.0 0 0) !important;\n}",
     "spacing": null
 }

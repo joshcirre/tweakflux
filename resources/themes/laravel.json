@@ -65,5 +65,6 @@
         "xl": "0 2.77px 2.21px oklch(0 0 0 / 0.26), 0 6.65px 5.32px oklch(0 0 0 / 0.19), 0 12.52px 10.02px oklch(0 0 0 / 0.16), 0 22.34px 17.87px oklch(0 0 0 / 0.13)",
         "2xl": "0 2.77px 2.21px oklch(0 0 0 / 0.26), 0 6.65px 5.32px oklch(0 0 0 / 0.19), 0 12.52px 10.02px oklch(0 0 0 / 0.16), 0 22.34px 17.87px oklch(0 0 0 / 0.13), 0 100px 80px oklch(0 0 0 / 0.075)"
     },
+    "css": "/* Laravel: crisp bottom edge on buttons */\n[data-flux-button][data-flux-group-target] {\n    border-bottom-width: 2px;\n}",
     "spacing": null
 }

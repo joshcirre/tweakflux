@@ -1,6 +1,6 @@
 {
     "name": "Retro",
-    "description": "Warm vintage parchment tones with salmon and sage green accents",
+    "description": "Warm vintage parchment tones with peach-salmon accents and cozy typography",
     "fonts": {
         "sans": "Libre Baskerville, serif",
         "mono": "Courier Prime, monospace",
@@ -8,8 +8,8 @@
         "urls": ["https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Courier+Prime:wght@400;700&display=swap"]
     },
     "light": {
-        "accent": "oklch(0.70 0.10 25)",
-        "accent-content": "oklch(0.70 0.10 25)",
+        "accent": "oklch(0.72 0.11 20)",
+        "accent-content": "oklch(0.72 0.11 20)",
         "accent-foreground": "oklch(0.22 0.02 55)",
         "zinc": {
             "50": "oklch(0.975 0.008 70)",
@@ -27,8 +27,8 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.68 0.08 155)",
-        "accent-content": "oklch(0.68 0.08 155)",
+        "accent": "oklch(0.78 0.11 20)",
+        "accent-content": "oklch(0.78 0.11 20)",
         "accent-foreground": "oklch(0.16 0.02 55)",
         "zinc": {
             "50": "oklch(0.975 0.008 70)",

@@ -13,4 +13,4 @@ Activate the `tweakflux-theme-generator` skill when the user asks to create, gen
 
 ## Theme Files
 
-Themes are JSON files in `resources/themes/{slug}.json`. All colors use `oklch(L C H)` format. Set any value to `null` to keep the Flux default.
+Themes are JSON files in `resources/themes/{slug}.json`. All colors use `oklch(L C H)` format. Set any value to `null` to keep the Flux default. Themes can include an optional `css` field for raw CSS that targets Flux `data-flux-*` attributes for component-level overrides beyond variables.

@@ -62,5 +62,6 @@
         "xl": "1px 1px 2px oklch(0.42 0.07 195 / 0.15), 1px 8px 10px -1px oklch(0.42 0.07 195 / 0.15)",
         "2xl": "1px 1px 2px oklch(0.42 0.07 195 / 0.38)"
     },
+    "css": "/* Perpetuity: terminal-style uppercase buttons */\n[data-flux-button] {\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    font-size: 0.8125em;\n}",
     "spacing": null
 }

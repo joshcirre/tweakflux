@@ -10,7 +10,7 @@
     "light": {
         "accent": "oklch(0.58 0.14 45)",
         "accent-content": "oklch(0.58 0.14 45)",
-        "accent-foreground": "oklch(0.98 0.005 60)",
+        "accent-foreground": "oklch(0.98 0.005 45)",
         "zinc": {
             "50": "oklch(0.98 0.005 60)",
             "100": "oklch(0.965 0.007 60)",
@@ -27,9 +27,9 @@
         "semantic": {}
     },
     "dark": {
-        "accent": "oklch(0.68 0.12 40)",
-        "accent-content": "oklch(0.68 0.12 40)",
-        "accent-foreground": "oklch(0.16 0.01 50)",
+        "accent": "oklch(0.68 0.12 45)",
+        "accent-content": "oklch(0.68 0.12 45)",
+        "accent-foreground": "oklch(0.16 0.01 45)",
         "zinc": {
             "50": "oklch(0.98 0.005 60)",
             "100": "oklch(0.965 0.007 60)",

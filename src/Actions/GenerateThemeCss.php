@@ -62,6 +62,16 @@ final class GenerateThemeCss
             $lines[] = '';
         }
 
+        // Append raw custom CSS from the theme (if any)
+        $customCss = $theme['css'] ?? null;
+
+        if (is_string($customCss) && $customCss !== '') {
+            $lines[] = '';
+            $lines[] = '/* Custom theme styles */';
+            $lines[] = $customCss;
+            $lines[] = '';
+        }
+
         return implode("\n", $lines);
     }
 
