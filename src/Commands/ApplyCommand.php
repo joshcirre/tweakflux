@@ -47,6 +47,11 @@ final class ApplyCommand extends Command
         /** @var string|null $themeName */
         $themeName = $input->getArgument('theme');
 
+        // Handle remote URL — fetch theme JSON and save locally
+        if (is_string($themeName) && str_starts_with($themeName, 'http')) {
+            return $this->applyFromUrl($themeName, $themesPath, $outputPath, $entryPoint, $input);
+        }
+
         if ($themeName === null) {
             $listThemes = new ListThemes($themesPath);
             $themes = $listThemes();
@@ -133,6 +138,83 @@ final class ApplyCommand extends Command
         file_put_contents($entryPoint, $contents."\n".self::IMPORT_STATEMENT."\n");
 
         info('Added TweakFlux import to '.basename($entryPoint));
+    }
+
+    private function applyFromUrl(string $url, string $themesPath, string $outputPath, string $entryPoint, InputInterface $input): int
+    {
+        $context = stream_context_create([
+            'http' => [
+                'timeout' => 15,
+                'header' => "Accept: application/json\r\n",
+            ],
+        ]);
+
+        $json = @file_get_contents($url, false, $context);
+
+        if ($json === false) {
+            error('Failed to fetch theme from: '.$url);
+
+            return Command::FAILURE;
+        }
+
+        /** @var array<string, mixed>|null $themeData */
+        $themeData = json_decode($json, true);
+
+        if (! is_array($themeData)) {
+            error('Invalid JSON returned from: '.$url);
+
+            return Command::FAILURE;
+        }
+
+        $name = is_string($themeData['name'] ?? null) ? $themeData['name'] : 'remote-theme';
+        $slug = mb_strtolower(trim((string) preg_replace('/[^A-Za-z0-9-]+/', '-', $name), '-'));
+
+        if (! is_dir($themesPath)) {
+            mkdir($themesPath, 0755, true);
+        }
+
+        $themeFile = $themesPath.'/'.$slug.'.json';
+        file_put_contents($themeFile, json_encode($themeData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
+
+        info(sprintf('Downloaded theme "%s" to %s', $name, $themeFile));
+
+        // Now apply the downloaded theme using the standard flow
+        $getTheme = new GetTheme($themesPath);
+        $generateCss = new GenerateThemeCss();
+
+        $theme = $getTheme($slug);
+        $includeEffects = ! $input->getOption('no-effects');
+
+        $effectsCss = $theme['effects'] ?? null;
+        $themeHasEffects = is_string($effectsCss) && $effectsCss !== '';
+
+        if ($includeEffects && $themeHasEffects && ! $input->getOption('no-interaction')) {
+            $disableEffects = confirm(
+                label: 'This theme includes visual effects (glows, animations). Disable them?',
+                default: false,
+            );
+
+            if ($disableEffects) {
+                $includeEffects = false;
+            }
+        }
+
+        $css = $generateCss($theme, $includeEffects);
+
+        $outputDir = dirname($outputPath);
+
+        if (! is_dir($outputDir)) {
+            mkdir($outputDir, 0755, true);
+        }
+
+        file_put_contents($outputPath, $css);
+
+        info(sprintf('Theme "%s" applied to %s', $name, $outputPath));
+
+        $this->injectImport($entryPoint);
+        $this->injectFontImports($entryPoint, $theme);
+
+        return Command::SUCCESS;
     }
 
     /**

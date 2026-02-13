@@ -98,6 +98,18 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
 - `accent-content` is used for text/icons ON accent backgrounds.
 - `accent-foreground` is the contrasting background behind accent content.
 
+### Accessibility & Contrast
+
+- **WCAG AA minimum**: all text/icon colors must have at least **4.5:1** contrast against their background. Large text (18px+ bold or 24px+) requires **3:1**.
+- `accent-content` appears ON `accent` backgrounds (e.g., white text on a colored button). Ensure sufficient contrast between them. In oklch terms, if the accent has L ~0.55–0.65, the content should have L ≥ 0.95 (light text) or L ≤ 0.20 (dark text).
+- `accent-foreground` is the background behind accent-colored text — ensure the accent color is readable on it.
+- Zinc text shades (700–950) must be readable on zinc background shades (50–200) in light mode. The lightness gap between text and background should be at least 0.40 L.
+- In dark mode, zinc text shades (50–300) must be readable on zinc background shades (800–950). Same minimum 0.40 L gap.
+- Avoid low-chroma accent colors (C < 0.05) that look muddy or indistinguishable from grays.
+- For danger/warning semantic colors, maintain the same contrast standards — red and amber must be readable, not washed out.
+- Focus rings inherit the accent color — ensure it's visible against both light and dark backgrounds.
+- When in doubt, favor higher contrast. Accessible themes look better to everyone.
+
 ### Dark Mode
 
 - Dark mode values go in the `dark` key. They follow the same structure as `light`.
