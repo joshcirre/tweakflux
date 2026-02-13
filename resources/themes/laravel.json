@@ -52,19 +52,19 @@
         "sm": "2px",
         "md": "2px",
         "lg": "2px",
-        "xl": "4px",
-        "2xl": "4px"
+        "xl": "2px",
+        "2xl": "2px"
     },
     "shadows": {
         "2xs": "0 1px 1px oklch(0 0 0 / 0.05)",
-        "xs": "0 1px 2px oklch(0 0 0 / 0.08), 0 1px 1px oklch(0 0 0 / 0.04)",
-        "sm": "0 2px 4px oklch(0 0 0 / 0.08), 0 1px 2px oklch(0 0 0 / 0.05)",
+        "xs": "0 1px 2px oklch(0 0 0 / 0.06), 0 0 1px oklch(0 0 0 / 0.03)",
+        "sm": "0 1px 2px oklch(0 0 0 / 0.06), 0 0 1px oklch(0 0 0 / 0.03), 0 0 0 1px oklch(0.10 0.01 85 / 0.16)",
         "DEFAULT": "0 4px 8px oklch(0 0 0 / 0.08), 0 2px 4px oklch(0 0 0 / 0.05)",
         "md": "0 6px 14px oklch(0 0 0 / 0.10), 0 2px 6px oklch(0 0 0 / 0.06)",
         "lg": "0 2.77px 2.21px oklch(0 0 0 / 0.26), 0 6.65px 5.32px oklch(0 0 0 / 0.19), 0 12.52px 10.02px oklch(0 0 0 / 0.16)",
         "xl": "0 2.77px 2.21px oklch(0 0 0 / 0.26), 0 6.65px 5.32px oklch(0 0 0 / 0.19), 0 12.52px 10.02px oklch(0 0 0 / 0.16), 0 22.34px 17.87px oklch(0 0 0 / 0.13)",
         "2xl": "0 2.77px 2.21px oklch(0 0 0 / 0.26), 0 6.65px 5.32px oklch(0 0 0 / 0.19), 0 12.52px 10.02px oklch(0 0 0 / 0.16), 0 22.34px 17.87px oklch(0 0 0 / 0.13), 0 100px 80px oklch(0 0 0 / 0.075)"
     },
-    "css": "/* Laravel: crisp bottom edge on buttons */\n[data-flux-button][data-flux-group-target] {\n    border-bottom-width: 2px;\n}",
+    "css": "/* Laravel: shadow-ring outline on filled/outline buttons, matching laravel.com */\n:root {\n    --laravel-ring: oklch(0.10 0.01 85 / 0.16);\n    --laravel-ring-hover: oklch(0.10 0.01 85 / 0.28);\n    --laravel-shadow: 0 1px 2px oklch(0 0 0 / 0.06), 0 0 1px oklch(0 0 0 / 0.03);\n}\n.dark {\n    --laravel-ring: oklch(0.90 0 0 / 0.16);\n    --laravel-ring-hover: oklch(0.90 0 0 / 0.28);\n    --laravel-shadow: 0 1px 2px oklch(0 0 0 / 0.2), 0 0 1px oklch(0 0 0 / 0.1);\n}\n/* Outline buttons: transparent bg + 1px ring via box-shadow */\n[data-flux-button][data-flux-group-target] {\n    box-shadow: var(--laravel-shadow), 0 0 0 1px var(--laravel-ring) !important;\n    border-color: transparent !important;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    box-shadow: var(--laravel-shadow), 0 0 0 1px var(--laravel-ring-hover) !important;\n}",
     "spacing": null
 }

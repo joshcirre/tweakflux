@@ -78,8 +78,9 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
         "xl": "shadow value",
         "2xl": "shadow value"
     },
-    "css": "/* Optional raw CSS appended after theme variables */",
-    "spacing": null
+    "css": "/* Optional structural CSS appended after theme variables */",
+    "spacing": null,
+    "effects": "/* Optional toggleable effects CSS (glows, animations) — users can disable with --no-effects */"
 }
 ```
 
@@ -123,10 +124,9 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
 - Larger shadows = more elevation. Scale alpha from ~0.05 (2xs) to ~0.22 (2xl).
 - For flat/brutalist themes, use hard offset shadows: `4px 4px 0 oklch(0 0 0)`.
 
-### Custom CSS
+### Custom CSS (`css`)
 
-- The `css` field accepts a raw CSS string that is appended **after** the `@layer theme` blocks.
-- Use this for component-level overrides that go beyond variables — e.g., button styles, glow effects, transforms.
+- The `css` field is for **structural** CSS that is always included — layout overrides, button shapes, transforms.
 - Flux components use `data-flux-*` attributes for targeting: `[data-flux-button]`, `[data-flux-input]`, etc.
 - Use `[data-flux-group-target]` (attribute presence, NOT `="true"`) to target primary/filled/outline/danger button variants while excluding ghost/subtle.
 - Include dark mode variants with `.dark [data-flux-button]` when needed.
@@ -141,6 +141,27 @@ Every theme is a JSON file saved to `resources/themes/{slug}.json`. Here is the 
     top: 2px;
     font-weight: 700;
     position: relative;
+}
+```
+
+### Effects (`effects`)
+
+- The `effects` field is for **toggleable** visual effects — glows, animations, hover transitions — that users can disable.
+- Users disable effects with `tweakflux apply {theme} --no-effects` or via the playground UI toggle.
+- Place CSS in `effects` (not `css`) when it adds decorative visual flair that some users may find distracting.
+- Place CSS in `css` when it is structural to the theme's identity and should always be included.
+- **Rule of thumb:** if removing it would break the theme's visual structure, use `css`. If removing it just makes the theme calmer, use `effects`.
+- Set to `null` or omit if the theme has no toggleable effects.
+- Example for neon glow on button hover:
+
+```css
+[data-flux-button][data-flux-group-target] {
+    border: 1px solid oklch(0.83 0.28 142 / 0.3) !important;
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+[data-flux-button][data-flux-group-target]:hover {
+    border-color: oklch(0.83 0.28 142 / 0.6) !important;
+    box-shadow: 0 0 12px oklch(0.83 0.28 142 / 0.3), 0 0 4px oklch(0.83 0.28 142 / 0.2);
 }
 ```
 
@@ -225,6 +246,7 @@ Here's the "Bubblegum" theme as a reference for quality and structure:
         "2xl": "0 28px 56px oklch(0.65 0.15 350 / 0.22)"
     },
     "css": null,
-    "spacing": null
+    "spacing": null,
+    "effects": null
 }
 ```

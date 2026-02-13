@@ -37,6 +37,7 @@ If `app.css` doesn't exist, the command prints the import and font URLs for you 
 | Command | Description |
 |---------|-------------|
 | `tweakflux apply {theme?}` | Apply a theme (interactive picker if no name given) |
+| `tweakflux apply {theme} --no-effects` | Apply a theme without visual effects (if applicable) |
 | `tweakflux list` | List all available themes |
 | `tweakflux create {name}` | Scaffold a new theme JSON file |
 | `tweakflux boost` | Copy Boost guidelines and skills into your project |
@@ -86,6 +87,29 @@ This scaffolds a JSON file at `resources/themes/my-theme.json`. Set any value to
 }
 ```
 
+## Effects
+
+Some themes include visual effects like glows and animations. These are stored in the `effects` field (separate from `css`) so users can toggle them off.
+
+When applying a theme with effects, the CLI will ask if you'd like to disable them. You can also skip the prompt:
+
+```bash
+# Apply with effects (default)
+tweakflux apply neon
+
+# Apply without effects
+tweakflux apply neon --no-effects
+```
+
+When creating a theme, use `effects` for decorative CSS that users might want to disable (hover glows, animated borders) and `css` for structural CSS that is essential to the theme's identity (raised buttons, custom borders).
+
+```json
+{
+    "css": null,
+    "effects": "/* Glow on button hover */\n[data-flux-button]:hover {\n    box-shadow: 0 0 12px oklch(0.83 0.28 142 / 0.3);\n}"
+}
+```
+
 ## Path Conventions
 
 All paths are relative to your project root (cwd):
@@ -118,7 +142,8 @@ The generated CSS uses Flux's own `@layer theme` pattern for dark mode, ensuring
 - **Shadows** — 2xs through 2xl
 - **Spacing** — base spacing unit
 - **Dark mode** — separate light/dark palettes per theme
-- **Custom CSS** — raw CSS appended after theme variables for component-level overrides (e.g., `[data-flux-button]` selectors)
+- **Custom CSS** — structural CSS always included (e.g., button shapes, layout overrides via `[data-flux-button]` selectors)
+- **Effects** — toggleable visual effects (glows, animations) that users can disable with `--no-effects`
 
 ## AI Theme Generation
 

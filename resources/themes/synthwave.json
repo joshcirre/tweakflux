@@ -62,6 +62,7 @@
         "xl": "0 20px 44px oklch(0.55 0.15 350 / 0.22)",
         "2xl": "0 28px 60px oklch(0.55 0.15 350 / 0.26)"
     },
-    "css": "/* Synthwave: pink glow on button hover */\n[data-flux-button][data-flux-group-target] {\n    border: 1px solid oklch(0.75 0.20 350 / 0.3) !important;\n    transition: box-shadow 150ms ease, border-color 150ms ease;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.5) !important;\n    box-shadow: 0 0 12px oklch(0.75 0.20 350 / 0.25), 0 0 4px oklch(0.75 0.20 350 / 0.15);\n}\n.dark [data-flux-button][data-flux-group-target] {\n    border-color: oklch(0.75 0.20 350 / 0.4) !important;\n}\n.dark [data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.7) !important;\n    box-shadow: 0 0 16px oklch(0.75 0.20 350 / 0.35), 0 0 6px oklch(0.75 0.20 350 / 0.25);\n}",
-    "spacing": null
+    "css": null,
+    "spacing": null,
+    "effects": "/* Synthwave: pink glow on button hover */\n[data-flux-button][data-flux-group-target] {\n    border: 1px solid oklch(0.75 0.20 350 / 0.3) !important;\n    transition: box-shadow 150ms ease, border-color 150ms ease;\n}\n[data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.5) !important;\n    box-shadow: 0 0 12px oklch(0.75 0.20 350 / 0.25), 0 0 4px oklch(0.75 0.20 350 / 0.15);\n}\n.dark [data-flux-button][data-flux-group-target] {\n    border-color: oklch(0.75 0.20 350 / 0.4) !important;\n}\n.dark [data-flux-button][data-flux-group-target]:hover {\n    border-color: oklch(0.75 0.20 350 / 0.7) !important;\n    box-shadow: 0 0 16px oklch(0.75 0.20 350 / 0.35), 0 0 6px oklch(0.75 0.20 350 / 0.25);\n}"
 }

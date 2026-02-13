@@ -11,7 +11,7 @@ final class GenerateThemeCss
      *
      * @param  array<string, mixed>  $theme
      */
-    public function __invoke(array $theme): string
+    public function __invoke(array $theme, bool $includeEffects = true): string
     {
         $lines = [];
 
@@ -70,6 +70,18 @@ final class GenerateThemeCss
             $lines[] = '/* Custom theme styles */';
             $lines[] = $customCss;
             $lines[] = '';
+        }
+
+        // Append toggleable effects CSS (glows, animations, etc.)
+        if ($includeEffects) {
+            $effectsCss = $theme['effects'] ?? null;
+
+            if (is_string($effectsCss) && $effectsCss !== '') {
+                $lines[] = '';
+                $lines[] = '/* Theme effects */';
+                $lines[] = $effectsCss;
+                $lines[] = '';
+            }
         }
 
         return implode("\n", $lines);

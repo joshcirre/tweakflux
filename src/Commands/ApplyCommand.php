@@ -8,11 +8,13 @@ use RuntimeException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use TweakFlux\Actions\GenerateThemeCss;
 use TweakFlux\Actions\GetTheme;
 use TweakFlux\Actions\ListThemes;
 
+use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\select;
@@ -30,8 +32,9 @@ final class ApplyCommand extends Command
     {
         $this
             ->setName('apply')
-            ->setDescription('Generate the TweakFlux theme CSS file')
-            ->addArgument('theme', InputArgument::OPTIONAL, 'The theme name to apply');
+            ->setDescription('Generate the TweakFlux theme CSS file (use --no-effects to disable visual effects)')
+            ->addArgument('theme', InputArgument::OPTIONAL, 'The theme name to apply')
+            ->addOption('no-effects', null, InputOption::VALUE_NONE, 'Exclude theme effects (glows, animations)');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -78,7 +81,23 @@ final class ApplyCommand extends Command
             return Command::FAILURE;
         }
 
-        $css = $generateCss($theme);
+        $includeEffects = ! $input->getOption('no-effects');
+
+        $effectsCss = $theme['effects'] ?? null;
+        $themeHasEffects = is_string($effectsCss) && $effectsCss !== '';
+
+        if ($includeEffects && $themeHasEffects && ! $input->getOption('no-interaction')) {
+            $disableEffects = confirm(
+                label: 'This theme includes visual effects (glows, animations). Disable them?',
+                default: false,
+            );
+
+            if ($disableEffects) {
+                $includeEffects = false;
+            }
+        }
+
+        $css = $generateCss($theme, $includeEffects);
 
         $outputDir = dirname($outputPath);
 
