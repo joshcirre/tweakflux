@@ -1,0 +1,66 @@
+{
+    "name": "Neon",
+    "description": "Hackerman terminal aesthetic with neon green accents on deep dark backgrounds",
+    "fonts": {
+        "sans": "JetBrains Mono, monospace",
+        "mono": "JetBrains Mono, monospace",
+        "serif": null,
+        "urls": ["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"]
+    },
+    "light": {
+        "accent": "oklch(0.45 0.18 150)",
+        "accent-content": "oklch(0.45 0.18 150)",
+        "accent-foreground": "oklch(0.97 0.01 150)",
+        "zinc": {
+            "50": "oklch(0.985 0.006 150)",
+            "100": "oklch(0.965 0.008 150)",
+            "200": "oklch(0.92 0.010 150)",
+            "300": "oklch(0.87 0.012 150)",
+            "400": "oklch(0.68 0.014 150)",
+            "500": "oklch(0.55 0.012 150)",
+            "600": "oklch(0.45 0.010 150)",
+            "700": "oklch(0.37 0.008 150)",
+            "800": "oklch(0.27 0.008 150)",
+            "900": "oklch(0.20 0.008 150)",
+            "950": "oklch(0.14 0.006 150)"
+        },
+        "semantic": {}
+    },
+    "dark": {
+        "accent": "oklch(0.83 0.28 142)",
+        "accent-content": "oklch(0.80 0.24 142)",
+        "accent-foreground": "oklch(0.08 0.02 150)",
+        "zinc": {
+            "50": "oklch(0.96 0.006 150)",
+            "100": "oklch(0.92 0.008 150)",
+            "200": "oklch(0.85 0.010 150)",
+            "300": "oklch(0.72 0.012 150)",
+            "400": "oklch(0.52 0.010 150)",
+            "500": "oklch(0.38 0.008 150)",
+            "600": "oklch(0.28 0.008 150)",
+            "700": "oklch(0.20 0.010 150)",
+            "800": "oklch(0.14 0.012 150)",
+            "900": "oklch(0.08 0.010 150)",
+            "950": "oklch(0.04 0.008 150)"
+        },
+        "semantic": {}
+    },
+    "radius": {
+        "sm": "0.125rem",
+        "md": "0.25rem",
+        "lg": "0.375rem",
+        "xl": "0.5rem",
+        "2xl": "0.625rem"
+    },
+    "shadows": {
+        "2xs": "0 0 2px oklch(0.80 0.25 142 / 0.12)",
+        "xs": "0 0 4px oklch(0.80 0.25 142 / 0.16), 0 1px 2px oklch(0.80 0.25 142 / 0.10)",
+        "sm": "0 0 8px oklch(0.80 0.25 142 / 0.18), 0 1px 3px oklch(0.80 0.25 142 / 0.10)",
+        "DEFAULT": "0 0 12px oklch(0.80 0.25 142 / 0.18), 0 2px 4px oklch(0.80 0.25 142 / 0.10)",
+        "md": "0 0 18px oklch(0.80 0.25 142 / 0.20), 0 2px 6px oklch(0.80 0.25 142 / 0.10)",
+        "lg": "0 0 30px oklch(0.80 0.25 142 / 0.22), 0 4px 10px oklch(0.80 0.25 142 / 0.10)",
+        "xl": "0 0 44px oklch(0.80 0.25 142 / 0.24)",
+        "2xl": "0 0 60px oklch(0.80 0.25 142 / 0.28)"
+    },
+    "spacing": null
+}
